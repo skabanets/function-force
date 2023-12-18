@@ -1,0 +1,9 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+body {
+  background-color: var(--primary-cl);
+  font-family: 'Neue Montreal', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--dark-cl);
+}

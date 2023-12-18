@@ -1,14 +1,36 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <title>Food Boutique</title>
+    <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <include src="./partials/header.html"></include>
+
+    <main>
+      <include src="./partials/hero.html"></include>
+
+      <section class="products">
+        <include src="./partials/filters.html"></include>
+        <div class="produts-container">
+          <div clss="main-products">
+            <include src="./partials/product-storage.html"></include>
+            <include src="./partials/empty-storage.html"></include>
+          </div>
+          <div class="additional-products">
+            <include src="./partials/popular-products.html"></include>
+            <include src="./partials/discount-products.html"></include>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <include src="./partials/footer.html"></include>
+
+    <include src="./partials/modal.html"></include>
+
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>
