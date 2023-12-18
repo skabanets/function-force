@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "function-force",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://skabanets.github.io/function-force",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /function-force/"
   },
   "repository": {
     "type": "git",
