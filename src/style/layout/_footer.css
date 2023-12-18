@@ -1,0 +1,23 @@
+.footer{
+    width: 375px;
+    height: 652px;
+}
+.footer-container{
+    background: #6D8434;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+.footer-logo{
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+}
+.footer-icons-list{
+display: flex;
+gap: 12px;
+margin-bottom: 40px;
+}
+.slogan-footer{
+    gap: 14px;
+    margin-bottom: 80px;
+}
