@@ -1,6 +1,7 @@
 :root {
   /* Colors*/
   --primary-cl: #e8e8e2;
+  --primary-cl-20: rgba(232, 232, 226, 0.2);
   --primary-cl-30: rgba(232, 232, 226, 0.3);
   --primary-cl-60: rgba(232, 232, 226, 0.6);
   --primary-cl-70: rgba(232, 232, 226, 0.7);
