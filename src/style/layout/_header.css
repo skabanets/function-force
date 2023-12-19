@@ -1,0 +1,141 @@
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.div-header {
+  margin-top: 32px;
+}
+.div-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9px;
+}
+
+.logo-header {
+  padding: 6px;
+  color: var(--primary-cl);
+  background-color: var(--lite-green);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transition: var(--trans);
+}
+.logo-header:hover,
+.logo-header:focus {
+  background-color: var(--dark-green);
+}
+
+.logo {
+  fill: var(--primary-cl);
+  transition: var(--trans);
+}
+
+.foodboutique-header {
+  font-family: FONTSPRING DEMO;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 20px;
+  letter-spacing: -0.36px;
+}
+@media screen and (min-width: 768px) {
+  .foodboutique-header {
+    font-style: normal;
+    letter-spacing: -0.48px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .foodboutique-header {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+  }
+}
+.home-header-button {
+  color: var(--primary-cl);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 30px;
+  background-color: var(--lite-green);
+  padding: 10px 20px;
+  gap: 10px;
+
+  border: 0;
+  transition: var(--trans);
+}
+.home-header-button:hover,
+.home-header-button:focus {
+  background-color: var(--dark-green);
+}
+@media screen and (min-width: 768px) {
+  .home-header-button {
+    font-size: 18px;
+    padding: 12px 28px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+@media screen and (min-width: 768px) {
+  .header-link {
+    gap: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .header-link {
+    gap: 24px;
+  }
+}
+.cart-header-svg {
+  fill: var(--primary-cl);
+  display: flex;
+  align-items: center;
+  transition: var(--trans);
+}
+@media screen and (min-width: 768px) {
+  .cart-header-svg {
+    gap: 14px;
+  }
+}
+.shopping-cart-header {
+  padding: 10px;
+  background-color: var(--lite-green);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transition: background-color var(--trans);
+}
+.shopping-cart-header:hover,
+.shopping-cart-header:focus {
+  background-color: var(--dark-green);
+}
+.cart-header {
+  display: none;
+  color: var(--dark-cl);
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: uppercase;
+  transition: var(--trans);
+}
+
+@media screen and (min-width: 768px) {
+  .cart-header {
+    display: flex;
+  }
+}
