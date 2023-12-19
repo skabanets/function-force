@@ -104,6 +104,12 @@
   font-size: 18px;
   font-weight: 500;
   margin-right: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .discount-price {
