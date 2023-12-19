@@ -169,6 +169,22 @@ class ProductsListComponent {
 
     return categories;
   }
+
+  /**
+    |============================
+    | Render function
+    |============================
+  */
+
+  async renderHTML() {
+    const products = await this.getProducts();
+
+    return products.results.map(this.template).join('');
+  }
+
+  template(product) {
+    return `<div><img src="${product.img}"><div><h3>${product.name}</h3></div></div>`;
+  }
 }
 
 export default ProductsListComponent;

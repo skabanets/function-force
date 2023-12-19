@@ -1,6 +1,9 @@
 import ProductsListComponent from './components/productsListComponent';
 
 const productsList = new ProductsListComponent();
+const refs = {
+  bodyElement: document.querySelector('body'),
+};
 /**
   |============================
   | Use this methods to filter results
@@ -40,6 +43,10 @@ const getFoodProducts = async () => {
       '🚀 ~ file: index.js:33 ~ getFoodProducts ~ productsByCategory:',
       productsByCategory
     );
+
+    // Render HTML example
+    const productListContent = await productsList.renderHTML();
+    refs.bodyElement.insertAdjacentHTML('afterbegin', productListContent);
   } catch (error) {
     console.log('🚀 ~ file: index.js:10 ~ getProducts ~ error:', error);
   }
