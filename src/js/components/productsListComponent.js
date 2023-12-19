@@ -1,5 +1,6 @@
 import * as foodAPI from '../api';
 import * as localStorage from '../storage';
+import { productListTemplate } from './productListTemplate';
 
 class ProductsListComponent {
   #keyword;
@@ -179,11 +180,7 @@ class ProductsListComponent {
   async renderHTML() {
     const products = await this.getProducts();
 
-    return products.results.map(this.template).join('');
-  }
-
-  template(product) {
-    return `<div><img src="${product.img}"><div><h3>${product.name}</h3></div></div>`;
+    return products.results.map(productListTemplate).join('');
   }
 }
 
