@@ -1,5 +1,5 @@
 .footer{
-    background: var(--lite-green);
+    background-color: var(--lite-green);
 }
 .footer-container{
     padding-top: 40px;
@@ -88,11 +88,11 @@
     border-radius: 10px;
     border: 1px solid var(--primary-cl-30);
     cursor: pointer;
-    transition: var(--trans);
+    transition: background-color var(--trans);
 }
 .footer-icons-item:hover,
 .footer-icons-item:focus {
-    background: var(--primary-cl-20);   
+    background-color: var(--primary-cl-20);   
 }
 
 .footer-icons-link{
