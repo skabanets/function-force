@@ -30,7 +30,8 @@
 }
 
 .logo {
-  fill: #e8e8e2;
+  fill: var(--primary-cl);
+  transition: var(--trans);
 }
 
 .foodboutique-header {
@@ -99,9 +100,10 @@
   }
 }
 .cart-header-svg {
-  fill: #e8e8e2;
+  fill: var(--primary-cl);
   display: flex;
   align-items: center;
+  transition: var(--trans);
 }
 @media screen and (min-width: 768px) {
   .cart-header-svg {
@@ -122,13 +124,14 @@
 }
 .cart-header {
   display: none;
-  color: #010101;
+  color: var(--dark-cl);
   font-family: Neue Montreal;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
   text-transform: uppercase;
+  transition: var(--trans);
 }
 
 @media screen and (min-width: 768px) {
