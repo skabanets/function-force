@@ -78,8 +78,8 @@
 <symbol id="close" viewBox="0 0 32 32">
 <path d="M31.75 3.913l-3.663-3.663-12.087 12.087-12.087-12.087-3.663 3.663 12.087 12.087-12.087 12.087 3.663 3.663 12.087-12.087 12.087 12.087 3.663-3.663-12.087-12.087 12.087-12.087z"></path>
 </symbol>
-<symbol id="icon-check" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M26.667 8l-14.667 14.667-6.667-6.667"></path>
+<symbol id="icon-check" viewBox="0 0 38 32">
+<path fill="none" stroke="#e8e8e2" style="stroke: var(--color1, #e8e8e2)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4.2667" d="M32 3.2l-17.6 17.6-8-8"></path>
 </symbol>
 <symbol id="icon-ion_close-sharp" viewBox="0 0 32 32">
 <path d="M25 9.093l-2.093-2.093-6.907 6.907-6.907-6.907-2.093 2.093 6.907 6.907-6.907 6.907 2.093 2.093 6.907-6.907 6.907 6.907 2.093-2.093-6.907-6.907 6.907-6.907z"></path>
