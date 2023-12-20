@@ -238,9 +238,13 @@
           <input
             id="checkout-email"
             class="checkout-form-input"
-            type="text"
+            type="email"
             name="email"
             placeholder="Enter your email"
+            pattern="^[a-zA-Z]\w+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$"
+            required
+            minlength="6"
+            maxlength="64"
           />
         </div>
         <button class="checkout-submit-btn" type="submit" name="checkout_order">
