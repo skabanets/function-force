@@ -5,10 +5,10 @@ const list = document.querySelector('.js-cart-list');
 
 const cards = async () => {
   try {
-    let limit = 10;
+    let limit = 6;
     const width = window.innerWidth;
-    // if (width >= 768 && width < 1440) limit = 8;
-    // else if (width >= 1440) limit = 9;
+    if (width >= 768 && width < 1440) limit = 8;
+    else if (width >= 1440) limit = 9;
 
     list.innerHTML = '';
     const { results } = await getProducts({
@@ -32,7 +32,7 @@ const cards = async () => {
       el.is10PercentOff
         ? `<svg class="discount-svg" width="60" height="60">
               <use
-                href="./images/sprite.svg#icon-discount"
+                href="/function-force/sprite.213ea699.svg#icon-discount"
               ></use>
             </svg>`
         : ''
@@ -57,7 +57,7 @@ const cards = async () => {
             <svg class="buy-svg" width="18" height="18">
               <use
                 class="check-svg"
-                href="./images/sprite.svg#icon-check"
+                href="/function-force/sprite.213ea699.svg#icon-check"
               ></use>
             </svg>
           </button>`
@@ -65,7 +65,7 @@ const cards = async () => {
             <svg class="buy-svg buy-btn" width="18" height="18">
               <use
                 class="buy-btn"
-                href="./images/sprite.svg#icon-shopping-cart"
+                href="/function-force/sprite.213ea699.svg#icon-shopping-cart"
               ></use>
             </svg>
           </button>`
@@ -74,7 +74,7 @@ const cards = async () => {
             <svg class="buy-svg " width="18" height="18">
               <use
                 class="buy-btn"
-                href="./images/sprite.svg#icon-check"
+                href="/function-force/sprite.213ea699.svg#icon-check"
               ></use>
             </svg>
           </button>
