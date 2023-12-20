@@ -5,7 +5,21 @@
 }
 .div-header {
   margin-top: 32px;
+  margin-bottom: 72px;
 }
+
+@media only screen and (min-width: 768px) {
+  .div-header {
+    margin-bottom: 116px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .div-header {
+    margin-bottom: 77px;
+  }
+}
+
 .div-logo {
   display: flex;
   align-items: center;
