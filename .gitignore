@@ -107,3 +107,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Pull request list
+pullrequests-list.txt
