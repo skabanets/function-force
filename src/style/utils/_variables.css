@@ -11,9 +11,11 @@
   --dark-green: #586f1f;
 
   --dark-cl: #010101;
+  --dark-cl-10: rgba(1, 1, 1, 0.1);
+  --dark-cl-20: rgba(1, 1, 1, 0.2);
   --dark-cl-30: rgba(1, 1, 1, 0.3);
+  --dark-cl-50: rgba(1, 1, 1, 0.5);
   --dark-cl-70: rgba(1, 1, 1, 0.7);
-
 
   --grey-cl: #a3a3a3;
   --grey-cl-30: rgba(163, 163, 163, 0.3);
