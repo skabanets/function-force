@@ -1,4 +1,4 @@
-<div class="conteiner">
+<div class="filters-conteiner">
   <h3 class="filters-p">Filters:</h3>
   <form
     id="product_search_form"
@@ -23,13 +23,19 @@
         </svg>
       </button>
     </div>
-    <div class="dropdown-filter">
+    <div class="dropdown-filter menu-filter-a">
       <div class="select-filter">
         <span class="selected">Categories</span>
       </div>
-      <div class="caret-filter"></div>
+      <div class="caret-filter">
+        <svg class="form-click-filter" width="20" height="20">
+          <use
+            href="./images/sprite.svg#icon-drop-down"
+          ></use>
+        </svg>
+      </div>
       <ul class="menu-filter">
-        <li class="active">Beverages</li>
+        <li>Beverages</li>
         <li>Breads / Bakery</li>
         <li>Dairy</li>
         <li>Deli</li>
@@ -42,24 +48,25 @@
         <li>Show all</li>
       </ul>
     </div>
-    <div class="dropdown-filter dropdown-filter-2">
+    <div class="dropdown-filter menu-filter-b dropdown-filter-2">
       <div class="select-filter">
         <span class="selected">A to Z</span>
       </div>
       <div class="caret-filter">
-        <svg class="form-search-btn-filter" width="20" height="20">
-          <use href="./images/sprite.svg#icon-check"></use>
+        <svg class="form-click-filter" width="20" height="20">
+          <use
+            href="./images/sprite.svg#icon-drop-down"
+          ></use>
         </svg>
       </div>
       <ul class="menu-filter">
-        <li class="active">A to Z</li>
-        <li>Z to A</li>
-        <li>Cheap</li>
-        <li>Expensive</li>
-        <li>Popular</li>
-        <li>Not popular</li>
-        <li>Show all</li>
-      </ul>
+          <li>A to Z</li>
+          <li>Z to A</li>
+          <li>Cheap</li>
+          <li>Expensive</li>
+          <li>Popular</li>
+          <li>Not popular</li>
+          <li>Show all</li>
     </div>
   </form>
 </div>
