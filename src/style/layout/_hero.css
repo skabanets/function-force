@@ -40,6 +40,7 @@
   line-height: 18px;
   word-wrap: break-word;
   text-align: center;
+  width: 292px;
 }
 
 @media screen and (min-width: 768px) {
@@ -86,10 +87,17 @@
   }
 }
 
-@media only screen and (min-width: 768px) and (min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+  (min-width: 768px) and (min-resolution: 192dpi) {
   .hero-image {
-    height: 580px;
     background-image: url('../../images/hero-image/webp-folder/hero-tablet@2x.webp');
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-image {
+    height: 350px;
+    background-image: url('../../images/hero-image/webp-folder/hero-desktop_1x.webp');
   }
 }
 
@@ -97,4 +105,18 @@
   position: absolute;
   top: -7px;
   right: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .svg-organic {
+    top: -30px;
+    right: 10px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .svg-organic {
+    top: -50px;
+    right: 20px;
+  }
 }
