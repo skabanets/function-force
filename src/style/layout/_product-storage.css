@@ -17,17 +17,16 @@
   border-radius: 10px;
   margin-bottom: 20px;
   height: 178px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cart-img {
-  top: 19px;
-  left: 78px;
-  position: absolute;
   width: 140px;
   height: 140px;
 }
-.discount-svg{
+.discount-svg {
   position: absolute;
   right: -10px;
   top: -26px;
@@ -80,8 +79,8 @@
   height: 34px;
   position: relative;
 }
-.check{
-cursor: default;
+.check {
+  cursor: default;
 }
 .buy:hover,
 .boy:focus {
@@ -94,7 +93,7 @@ cursor: default;
   top: 8px;
   left: 8px;
 }
-.hidden{
+.hidden {
   display: none;
 }
 
@@ -114,6 +113,9 @@ cursor: default;
   }
 }
 @media screen and (min-width: 1440px) {
+  .cart-list {
+    gap: 40px 20px;
+  }
   .cart {
     width: 295px;
   }
