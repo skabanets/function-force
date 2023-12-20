@@ -15,7 +15,7 @@
       <section class="products">
         <include src="./partials/filters.html"></include>
         <div class="produts-container">
-          <div clss="main-products">
+          <div class="main-products">
             <include src="./partials/product-storage.html"></include>
             <include src="./partials/empty-storage.html"></include>
           </div>
@@ -25,12 +25,18 @@
           </div>
         </div>
       </section>
+
+      <section>
+        <include src="./partials/product-modal.html"></include>
+        <include src="./partials/order-success-modal.html"></include>
+        <include src="./partials/success-susubscribing-modal.html"></include>
+        <include src="./partials/error-subscribing-modal.html"></include>
+      </section>
     </main>
 
     <include src="./partials/footer.html"></include>
 
     <include src="./partials/modal.html"></include>
-
-    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/index.js" defer></script>
   </body>
 </html>

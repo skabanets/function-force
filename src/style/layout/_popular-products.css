@@ -1,0 +1,150 @@
+.popular-products {
+  min-width: 320px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.list-popular {
+  width: 100%;
+  height: auto;
+}
+
+.card-popular {
+  display: flex;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+.text-pop {
+  margin-right: auto;
+}
+
+.pop-info {
+  display: flex;
+  display: flex;
+  width: 152px;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.text-info {
+  color: rgba(1, 1, 1, 0.3);
+  font-family: Neue Montreal, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.text-info-pop {
+  color: #010101;
+  font-family: Neue Montreal, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.cont-img {
+  padding: 9px;
+  border-radius: 10px;
+  background: #e8e8e2;
+  margin-right: 10px;
+}
+
+.img-popular {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: #e8e8e2;
+}
+
+.title-popular {
+  margin-bottom: 20px;
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  width: 100%;
+  height: auto;
+}
+
+.title-pop-text {
+  color: #010101;
+  font-family: Neue Montreal sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.btn-popular {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background: #e8e8e2;
+  border: 0;
+}
+.btn-popular:hover,
+.btn-popular:focus {
+  border-radius: 30px;
+  background: #6d8434;
+}
+.svg-pop {
+  color: #6d8434;
+  fill: #6d8434;
+}
+
+.svg-pop {
+background: url(../../img/icons.svg#icon-check);
+}
+
+
+.svg-pop:hover,
+.svg-pop:focus{
+  color: #e8e8e2;
+  fill: #e8e8e2;
+   background: url(../../img/icons.svg#icon-check);
+}
+
+.svg-active::before {
+     color: #e8e8e2;
+  fill: #e8e8e2;
+background: url(../../img/icons.svg#icon-check);
+}
+
+@media screen and (min-width: 768px) {
+  .popular-products {
+    padding: 0 32px;
+  }
+  .list-popular {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    justify-content: flex-start;
+  }
+  .card-popular {
+    margin-bottom: 14px;
+    width: calc((100% - 60px) / 2);
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .list-popular {
+    display: block;
+  }
+  .card-popular {
+    margin-bottom: 13px;
+  }
+}
