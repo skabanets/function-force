@@ -1,3 +1,4 @@
+/* ///Style title\\\ */
 .style-title-hero {
   color: #010101;
   font-size: 44px;
@@ -32,6 +33,7 @@
   }
 }
 
+/* ///Text after title\\\ */
 .text-hero {
   color: rgba(1, 1, 1, 0.8);
   font-size: 14px;
@@ -50,7 +52,7 @@
     width: 492px;
   }
 }
-
+/* ///Style box for hero\\\ */
 .hero-box {
   display: flex;
   align-items: center;
@@ -68,6 +70,7 @@
   }
 }
 
+/* ///Hero image mobile\\\ */
 .hero-image {
   position: relative;
   width: 100%;
@@ -80,6 +83,14 @@
   background-image: url('../../images/hero-image/webp-folder/hero-image-mobile_1x.webp');
 }
 
+@media only screen and (max-width: 767px) and (min-device-pixel-ratio: 2),
+  (max-width: 767px) and (min-resolution: 192dpi) {
+  .hero-image {
+    background-image: url('../../images/hero-image/webp-folder/hero-image-mobile_2x.webp');
+  }
+}
+
+/* ///Hero image tablet\\\ */
 @media only screen and (min-width: 768px) {
   .hero-image {
     height: 580px;
@@ -94,6 +105,7 @@
   }
 }
 
+/* ///Hero image desktop\\\ */
 @media only screen and (min-width: 1440px) {
   .hero-image {
     height: 350px;
@@ -101,6 +113,13 @@
   }
 }
 
+@media only screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
+  (min-width: 1440px) and (min-resolution: 192dpi) {
+  .hero-image {
+    background-image: url('../../images/hero-image/webp-folder/hero-desktop_2x.webp');
+  }
+}
+/* ///Svg on hero image\\\ */
 .svg-organic {
   position: absolute;
   top: -7px;
