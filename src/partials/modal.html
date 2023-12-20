@@ -1,49 +1,53 @@
-<div class="backdrops is-hidden">
-  <!--  -->
-  <div class="modal">
-    <button type="button" class="modal-close-btn close">
-      <svg class="close-icon">
+<div class="modal-backdrops is-hidden" data-modal>
+  <div class="modal-window">
+    <button type="button" class="modal-close-btn close" data-modal-close>
+      <svg class="modal-close-icon">
         <use href="./images/sprite.svg#close"></use>
       </svg>
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="none">
-        <path
-          d="M21.875 7.95648L20.0435 6.125L14 12.1685L7.95648 6.125L6.125 7.95648L12.1685 14L6.125 20.0435L7.95648 21.875L14 15.8315L20.0435 21.875L21.875 20.0435L15.8315 14L21.875 7.95648Z"
-          fill="#010101"
-        />
-      </svg> -->
     </button>
 
-    <div class="main-content-box">
-      <div class="picture-box">
-        <img class="pic" src="#" alt="picture of the vegetable" />
+    <div class="modal-main-content-box">
+      <div class="modal-picture-box">
+        <img class="modal-pic" src="#" alt="picture of the vegetable" />
       </div>
 
       <div>
-        <h2 class="title">Pumpkin</h2>
-        <div class="box-info">
+        <h2 class="modal-title">Pumpkin</h2>
+        <div class="modal-box-info">
           <p class="classification">
-            Category:<span class="info">Fresh Produce</span>
+            Category:<span class="modal-info">Fresh Produce</span>
           </p>
           <p class="classification">
-            Size:<span class="info">1 medium-sized</span>
+            Size:<span class="modal-info">1 medium-sized</span>
           </p>
-          <p class="classification">Popularity:<span class="info">0</span></p>
-        </div>
-        <div>
-          <p class="description">
-            A round, orange vegetable with a thick shell and seeds inside. It is
-            often used in cooking and baking for its sweet and earthy flavor.
+          <p class="classification">
+            Popularity:<span class="modal-info">0</span>
           </p>
         </div>
+
+        <p class="modal-description">
+          A round, orange vegetable with a thick shell and seeds inside. It is
+          often used in cooking and baking for its sweet and earthy flavor.
+        </p>
       </div>
     </div>
 
-    <div class="box-bottom">
-      <p class="price">$2.99</p>
+    <div class="modal-box-bottom">
+      <p class="modal-price">$2.99</p>
 
-      <button type="submit" class="add-to">
-        Add to<svg class="shopping-cart" width="18" height="18">
-          <use href="./images/sprite.svg#shopping-cart"></use>
+      <button type="submit" class="add-to" data-modal-add-to>
+        Add to<svg class="modal-shopping-cart" width="18" height="18">
+          <use href="./images/sprite.svg#icon-shopping-cart"></use>
+        </svg>
+      </button>
+
+      <button
+        type="submit"
+        class="added-to visually-hidden"
+        data-modal-added-to
+      >
+        Added to<svg class="modal-shopping-cart" width="18" height="18">
+          <use href="./images/sprite.svg#icon-shopping-cart"></use>
         </svg>
       </button>
     </div>

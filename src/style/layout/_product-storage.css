@@ -27,7 +27,11 @@
   width: 140px;
   height: 140px;
 }
-
+.discount-svg{
+  position: absolute;
+  right: -10px;
+  top: -26px;
+}
 .cart-name {
   font-family: 'Neue Montreal', sans-serif;
   font-size: 18px;
@@ -67,7 +71,8 @@
   line-height: 20px;
   color: var(--dark-cl);
 }
-.buy {
+.buy,
+.check {
   border: none;
   background-color: var(--lite-green);
   border-radius: 30px;
@@ -75,11 +80,22 @@
   height: 34px;
   position: relative;
 }
-.buy-svg {
+.check{
+cursor: default;
+}
+.buy:hover,
+.boy:focus {
+  background-color: var(--dark-green);
+}
+.buy-svg,
+.check-svg {
   fill: var(--primary-cl);
   position: absolute;
   top: 8px;
   left: 8px;
+}
+.hidden{
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -109,5 +125,4 @@
     flex-wrap: wrap;
     margin-bottom: 20px;
   }
-
 }
