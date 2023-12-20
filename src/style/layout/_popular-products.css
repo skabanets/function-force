@@ -1,150 +1,117 @@
-/* .popular-products {
-  min-width: 320px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
-
-.list-popular {
-  width: 100%;
-  height: auto;
-}
-
-.card-popular {
+.popular-product-list {
   display: flex;
-  border-radius: 10px;
-  background: #fafafa;
-  padding: 12px;
-  margin-bottom: 14px;
-}
-.text-pop {
-  margin-right: auto;
-}
-
-.pop-info {
-  display: flex;
-  display: flex;
-  width: 152px;
-  align-items: flex-start;
-  align-content: flex-start;
-  gap: 9px;
-  flex-wrap: wrap;
-}
-
-.text-info {
-  color: rgba(1, 1, 1, 0.3);
-  font-family: Neue Montreal, sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 14px;
-}
-
-.text-info-pop {
-  color: #010101;
-  font-family: Neue Montreal, sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 14px;
-}
-
-.cont-img {
-  padding: 9px;
-  border-radius: 10px;
-  background: #e8e8e2;
-  margin-right: 10px;
-}
-
-.img-popular {
-  width: 56px;
-  height: 56px;
-  border-radius: 10px;
-  background: #e8e8e2;
-}
-
-.title-popular {
-  margin-bottom: 20px;
-  color: #010101;
-  font-family: Neue Montreal;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 32px;
-  width: 100%;
-  height: auto;
-}
-
-.title-pop-text {
-  color: #010101;
-  font-family: Neue Montreal sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  margin-bottom: 10px;
-}
-
-.btn-popular {
-  display: inline-flex;
-  width: 20px;
-  height: 20px;
-  padding: 4px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  background: #e8e8e2;
-  border: 0;
-}
-.btn-popular:hover,
-.btn-popular:focus {
-  border-radius: 30px;
-  background: #6d8434;
-}
-.svg-pop {
-  color: #6d8434;
-  fill: #6d8434;
-}
-
-.svg-pop {
-background: url(../../img/icons.svg#icon-check);
-}
-
-
-.svg-pop:hover,
-.svg-pop:focus{
-  color: #e8e8e2;
-  fill: #e8e8e2;
-   background: url(../../img/icons.svg#icon-check);
-}
-
-.svg-active::before {
-     color: #e8e8e2;
-  fill: #e8e8e2;
-background: url(../../img/icons.svg#icon-check);
+  flex-direction: column;
+  gap: 13px;
 }
 
 @media screen and (min-width: 768px) {
-  .popular-products {
-    padding: 0 32px;
-  }
-  .list-popular {
-    display: flex;
+  .popular-product-list {
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 13px;
-    justify-content: flex-start;
-  }
-  .card-popular {
-    margin-bottom: 14px;
-    width: calc((100% - 60px) / 2);
-    margin: 0;
+    gap: 14px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .list-popular {
-    display: block;
+  .popular-product-list {
+    flex-direction: column;
+    gap: 13px;
   }
-  .card-popular {
-    margin-bottom: 13px;
+}
+
+.popular-product-item {
+  width: 335px;
+  height: 98px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: var(--lite-color);
+  display: flex;
+  gap: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .popular-product-item {
+    width: 275px;
   }
+}
+
+.product-image-container {
+  width: 74px;
+  height: 74px;
+  border-radius: 10px;
+  background-color: var(--primary-cl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 152px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 9px;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--dark-cl-30);
+}
+
+.info-text {
+  color: var(--dark-cl);
+  margin-left: 4px;
+}
+
+/* .popular-product-btn {
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  align-items: center;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--primary-cl);
+}
+
+.icon-shoping-cart {
+  fill: var(--lite-green);
 } */
+
+.popular-product-button {
+  height: 20px;
+  width: 20px;
+  border-radius: 30px;
+  background-color: var(--primary-cl);
+  border: none;
+  padding: 4px;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color var(--trans);
+}
+
+.popular-product-button:hover,
+.popular-product-button:focus {
+  background-color: var(--dark-green);
+}
+
+.icon-popular-btn {
+  fill: #586f1f;
+  transition: fill var(--trans);
+}
+
+.icon-popular-btn:hover,
+.icon-popular-btn:focus {
+  fill: var(--primary-cl);
+}
