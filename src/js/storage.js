@@ -13,7 +13,7 @@ export const setItem = (key, value) => {
 export const getItem = key => {
   try {
     const serializedValue = localStorage.getItem(key);
-    return serializedValue === null ? undefined : JSON.parse(serializedValue);
+    return serializedValue === null ? [] : JSON.parse(serializedValue);
   } catch (error) {
     console.log(`Could not retrieve '${key}' from Local Sorage. Error:`, error);
   }
