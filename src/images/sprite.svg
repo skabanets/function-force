@@ -77,6 +77,16 @@
 </symbol>
 <symbol id="icon-check" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M26.667 8l-14.667 14.667-6.667-6.667"></path>
-</symbol>n
+</symbol>
+<symbol id="icon-ion_close-sharp" viewBox="0 0 32 32">
+<path d="M25 9.093l-2.093-2.093-6.907 6.907-6.907-6.907-2.093 2.093 6.907 6.907-6.907 6.907 2.093 2.093 6.907-6.907 6.907 6.907 2.093-2.093-6.907-6.907 6.907-6.907z"></path>
+</symbol>
+<symbol id="icon-plus" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M16 6.667v18.667"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M6.67 16h18.667"></path>
+</symbol>
+<symbol id="icon-minus" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M6.67 16h18.667"></path>
+</symbol>
 </defs>
 </svg>
