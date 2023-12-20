@@ -9,11 +9,6 @@
   position: relative;
   /* background: #E8E8E2; */
 }
-.button-div-success {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 28px;
-}
 
 .order-success-button {
   width: 29px;
@@ -29,10 +24,18 @@
    right: 24px;
   
 }
+.img-text-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tomato-elips{
+position: relative;
+margin-bottom: 37px;
+}
+
 .order-success-img {
-  margin: 0;
-  padding: 0;
-  border: 0;
   width: 140px;
   height: 140px;
 }
@@ -44,38 +47,6 @@
   bottom: -10px;
 }
 
-.tomato-elips{
-position: relative;
-margin-bottom: 37px;
-}
-/* .svg-div{
-width: 168;
-height: 169;
-padding: 0;
-margin: 0;
-} */
-/* .use-elips {
-  margin: 0;
-  padding: 0;
-  width: 145px;
-  height: auto;
-} */
-.img-svg-success {
-  width: 147px;
-  height: 147px;
-  flex-shrink: 0;
-  margin-bottom: 37px;
-}
-
-.order-success-text {
-  color: rgba(1, 1, 1, 0.7);
-  text-align: center;
-  font-family: Neue Montreal;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
 .order-success-h {
   color: #010101;
   font-family: Neue Montreal;
@@ -86,11 +57,16 @@ margin: 0;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-
-.img-text-success {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.order-success-text {
+  color: var(--dark-cl-70);
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
+
+
+
 
