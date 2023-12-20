@@ -91,5 +91,8 @@
 <symbol id="icon-minus" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M6.67 16h18.667"></path>
 </symbol>
+<symbol id="icon-ellipse-shadow" viewBox="0 0 87 32">
+<path d="M77.647 16c0 3.639-15.275 6.588-34.118 6.588s-34.118-2.95-34.118-6.588c0-3.639 15.275-6.588 34.118-6.588s34.118 2.95 34.118 6.588z"></path>
+</symbol>
 </defs>
 </svg>

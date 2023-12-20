@@ -1,0 +1,96 @@
+.modal-order-success {
+  width: 560px;
+  height: 509px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: white;
+  margin-left: 200px;
+  padding: 80px 40px;
+  position: relative;
+  /* background: #E8E8E2; */
+}
+.button-div-success {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 28px;
+}
+
+.order-success-button {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #e8e8e2;
+  position: absolute;
+ top: 24px;
+   right: 24px;
+  
+}
+.order-success-img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 140px;
+  height: 140px;
+}
+
+.svg-elips {
+/* filter: blur(10px); */
+  fill: var(--dark-cl-10);
+  position: absolute;
+  bottom: -10px;
+}
+
+.tomato-elips{
+position: relative;
+margin-bottom: 37px;
+}
+/* .svg-div{
+width: 168;
+height: 169;
+padding: 0;
+margin: 0;
+} */
+/* .use-elips {
+  margin: 0;
+  padding: 0;
+  width: 145px;
+  height: auto;
+} */
+.img-svg-success {
+  width: 147px;
+  height: 147px;
+  flex-shrink: 0;
+  margin-bottom: 37px;
+}
+
+.order-success-text {
+  color: rgba(1, 1, 1, 0.7);
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.order-success-h {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.img-text-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
