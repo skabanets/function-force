@@ -1,20 +1,10 @@
-export const getProductsCategories = async () => {
+import { getDiscountedProducts } from '../api';
+const discountList = document.querySelector('.js-discount-list');
+async function renderDiscountProducts() {
   try {
-    const response = await foodAPI.get('/products/categories');
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching product categories:', error);
-    throw error;
-  }
-};
-async function renderDiscountItems(discounts) {
-  const discountList = document.getElementById('list');
-
-  try {
-    const categories = await getProductsCategories();
-    console.log(categories);
-
-    const itemsHTML = discounts
+    const discountProducts = await getDiscountedProducts();
+    console.log(discountProducts);
+    const itemsHTML = discountProducts
       .slice(0, 2)
       .map(
         discount => `
@@ -24,7 +14,7 @@ async function renderDiscountItems(discounts) {
             </svg>
             <div class="discount-container-img">
               <img
-                src="${discount.imgSrc}"
+                src="${discount.img}"
                 alt="${discount.name}-img"
                 class="discount-img"
               />
@@ -38,17 +28,13 @@ async function renderDiscountItems(discounts) {
                 </svg>
               </button>
             </div>
-            <div class="product-categories">
-              <p>${categories.join(', ')}</p>
-            </div>
           </li>
         `
       )
       .join('');
-
     discountList.insertAdjacentHTML('beforeend', itemsHTML);
   } catch (error) {
     console.error('Error rendering discount items:', error);
   }
 }
-renderDiscountItems(discounts);
+renderDiscountProducts();
