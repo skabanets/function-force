@@ -38,8 +38,8 @@ export const getDiscountedProducts = async () => {
 // Get Products' Categories
 export const getProductsCategories = async () => {
   const response = await foodAPI.get('/products/categories');
-
   return response.data;
+  
 };
 
 // Get Product by ID
