@@ -62,9 +62,12 @@ const displayPagination = async () => {
   const step = () => {
     const active = document.querySelector('.pg-active');
     active.classList.remove('pg-active');
+    console.log(page);
+
     page > 2 && page < totalPages - 2
-      ? list.childNodes[3].classList.toggle('pg-active')
-      : list.childNodes[page < 3 ? page : page + 5 - totalPages].classList.add(
+      ? list.childNodes[2].classList.toggle('pg-active')
+      : 
+      list.childNodes[page < 3 ? page - 1 : page + 4 - totalPages].classList.add(
           'pg-active'
         );
   };
@@ -74,8 +77,8 @@ const displayPagination = async () => {
     leftBtns.childNodes[3].classList.toggle('dis', page == 1);
     rightBtns.childNodes[1].classList.toggle('dis', page == totalPages);
     rightBtns.childNodes[3].classList.toggle('dis', page == totalPages);
-    list.childNodes[1].classList.toggle('dis', page == 1);
-    list.childNodes[5].classList.toggle('dis', page == totalPages);
+    list.childNodes[0].classList.toggle('dis', page == 1);
+    list.childNodes[4].classList.toggle('dis', page == totalPages);
   }
 
   list.addEventListener('click', e => changePage(e.target));
