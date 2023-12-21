@@ -15,12 +15,11 @@ async function renderCategoriesList() {
         menuCategories.innerHTML = '';
         const data = await getProductsCategories();
         markup = getMarkup(data);
-        markup = markup + '<li class="show-all-categories">Show all</li>';       
+        markup = markup + '<li class="show-all-categories">Show all</li>';
     } catch(error) {
         markup = '<li>Error! Try again</li>';
-        // menuCategories.remove();
     }
-
-   menuCategories.innerHTML = markup;
+    menuCategories.innerHTML = markup; 
 } 
-categories.addEventListener('click', renderCategoriesList);
+renderCategoriesList();
+
