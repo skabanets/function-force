@@ -1,0 +1,63 @@
+.pagination-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.lef-btns,
+.right-btns {
+  display: flex;
+  gap: 8px;
+}
+.pg-arrow {
+  width: 40px;
+  height: 40px;
+  background-color: var(--lite-color);
+  fill: var(--grey-cl);
+  border: none;
+  border-radius: 60px;
+  position: relative;
+}
+.pg-svg {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+
+.pg-list {
+  margin: 0 32px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.pg-item{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 60px;
+  color: var(--grey-cl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pg-item{
+  cursor: pointer;
+}
+.pg-item:hover, 
+.pg-item:focus,
+.pg-arrow:hover,
+.pg-arrow:focus,
+.pg-active {
+  background-color: var(--lite-green);
+  color: var(--primary-cl);
+  fill: var(--primary-cl);
+}
+.dis{
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.dotDis{
+    cursor: default;
+  pointer-events: none;
+}

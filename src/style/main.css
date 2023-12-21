@@ -11,5 +11,6 @@
 @import url('./layout/_cart.css');
 @import url('./layout/_footer.css');
 @import url('./layout/_modal.css');
+@import url('./layout/_pagination.css');
 
 @import url('./components/_components.css');
