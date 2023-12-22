@@ -73,7 +73,6 @@ const displayPagination = async () => {
   const step = () => {
     const active = document.querySelector('.pg-active');
     active.classList.remove('pg-active');
-    console.log(page);
     if (mobileDisp()) {
       page > 1 && page < totalPages - 1
         ? list.childNodes[1].classList.toggle('pg-active')
