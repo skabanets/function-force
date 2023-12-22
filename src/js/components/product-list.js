@@ -1,14 +1,15 @@
 import { getProducts } from '../api';
 import { getItem } from '../storage';
 import { buyItem } from './buy-product';
+import sprite from '../../images/sprite.svg'
+
 const list = document.querySelector('.js-cart-list');
+
 
 export const cards = async (page = 1) => {
   try {
     list.innerHTML =
-    
-      '<li class="list-loader"><span class="loader"></span></li>'
-    ;
+      '<li class="list-loader"><span class="loader"></span></li>';
     const { results } = await getProducts({
       page: page,
       sort: {
@@ -30,7 +31,7 @@ export const cards = async (page = 1) => {
       el.is10PercentOff
         ? `<svg class="discount-svg" width="60" height="60">
               <use
-                href="/function-force/sprite.213ea699.svg#icon-discount"
+                href="${sprite}#icon-discount"
               ></use>
             </svg>`
         : ''
@@ -55,7 +56,7 @@ export const cards = async (page = 1) => {
             <svg class="buy-svg" width="18" height="18">
               <use
                 class="check-svg"
-                href="/function-force/sprite.213ea699.svg#icon-check"
+                href="${sprite}#icon-check"
               ></use>
             </svg>
           </button>`
@@ -63,7 +64,7 @@ export const cards = async (page = 1) => {
             <svg class="buy-svg buy-btn" width="18" height="18">
               <use
                 class="buy-btn"
-                href="/function-force/sprite.213ea699.svg#icon-shopping-cart"
+                href="${sprite}#icon-shopping-cart"
               ></use>
             </svg>
           </button>`
@@ -72,7 +73,7 @@ export const cards = async (page = 1) => {
             <svg class="buy-svg " width="18" height="18">
               <use
                 class="buy-btn"
-                href="/function-force/sprite.213ea699.svg#icon-check"
+                href="${sprite}#icon-check"
               ></use>
             </svg>
           </button>
