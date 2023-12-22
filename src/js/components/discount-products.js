@@ -1,3 +1,4 @@
+import sprite from '../../images/sprite.svg';
 import { getDiscountedProducts } from '../api';
 const discountList = document.querySelector('.js-discount-list');
 async function renderDiscountProducts() {
@@ -10,7 +11,7 @@ async function renderDiscountProducts() {
         discount => `
           <li class="discount-item">
             <svg class="discount-icon" width="60" height="60">
-              <use href="./images/sprite.svg#icon-discount"></use>
+              <use href="${sprite}#icon-discount"></use>
             </svg>
             <div class="discount-container-img">
               <img
@@ -24,7 +25,7 @@ async function renderDiscountProducts() {
               <p class="discount-price">&#36;${discount.price}</p>
               <button type="button" class="discount-button">
                 <svg class="discount-shopping-icon" width="18" height="18">
-                  <use href="./images/sprite.svg#icon-shopping-cart"></use>
+                  <use href="${sprite}#icon-shopping-cart"></use>
                 </svg>
               </button>
             </div>

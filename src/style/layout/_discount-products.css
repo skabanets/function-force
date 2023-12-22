@@ -63,6 +63,10 @@
   background-color: #e8e8e2;
 }
 
+.discount-img {
+  width: 114px;
+}
+
 @media screen and (min-width: 1440px) {
   .discount-container-img {
     width: 243px;
