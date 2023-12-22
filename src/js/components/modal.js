@@ -17,7 +17,11 @@ refs.closeModalBtn.addEventListener('click', toggleModal);
 refs.modal.addEventListener('click', handleModalClick);
 
 async function toggleModal(event) {
-  if (event.target.closest('.js-buy-button')) return;
+  if (
+    event.target.closest('.js-buy-button') ||
+    event.target.closest('.pagination-container')
+  )
+    return;
 
   refs.modal.classList.toggle('is-hidden');
 
