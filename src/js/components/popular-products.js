@@ -50,7 +50,7 @@ const initPopularproducts = async () => {
               ></use>
             </svg>
           </button>`
-          : `<button class="popular-product-button btn-js" type="button">
+          : `<button class="popular-product-button btn-js js-buy-button" type="button">
             <svg class="icon-popular-btn btn-js" width="12" height="12">
               <use
                 class="btn-js"

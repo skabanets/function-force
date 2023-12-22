@@ -1,10 +1,9 @@
 import { getProducts } from '../api';
 import { getItem } from '../storage';
 import { buyItem } from './buy-product';
-import sprite from '../../images/sprite.svg'
+import sprite from '../../images/sprite.svg';
 
 const list = document.querySelector('.js-cart-list');
-
 
 export const cards = async (page = 1) => {
   try {
@@ -60,7 +59,7 @@ export const cards = async (page = 1) => {
               ></use>
             </svg>
           </button>`
-          : `<button class="buy buy-btn" type="button">
+          : `<button class="buy buy-btn js-buy-button" type="button">
             <svg class="buy-svg buy-btn" width="18" height="18">
               <use
                 class="buy-btn"

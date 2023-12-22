@@ -23,7 +23,7 @@ async function renderDiscountProducts() {
             <div class="discount-order">
               <h3 class="discount-name">${element.name}</h3>
               <p class="discount-price">&#36;${element.price}</p>
-              <button type="button" class="discount-button">
+              <button type="button" class="discount-button js-buy-button">
                 <svg class="discount-shopping-icon" width="18" height="18">
                   <use href="${sprite}#icon-shopping-cart"></use>
                 </svg>

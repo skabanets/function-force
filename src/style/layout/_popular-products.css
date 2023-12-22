@@ -108,12 +108,12 @@
 }
 
 .icon-popular-btn {
-  fill: #586f1f;
+  fill: var(--dark-green);
   transition: fill var(--trans);
 }
 
-.icon-popular-btn:hover,
-.icon-popular-btn:focus {
+.popular-product-button:hover .icon-popular-btn,
+.popular-product-button:focus .icon-popular-btn {
   fill: var(--primary-cl);
 }
 
