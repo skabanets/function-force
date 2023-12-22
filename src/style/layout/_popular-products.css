@@ -27,6 +27,7 @@
   background-color: var(--lite-color);
   display: flex;
   gap: 10px;
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {
@@ -61,11 +62,11 @@
 .product-info {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 9px;
   font-size: 12px;
   line-height: 14px;
   color: var(--dark-cl-30);
+  width: 156px;
 }
 
 .info-text {
@@ -73,7 +74,7 @@
   margin-left: 4px;
 }
 
-/* .popular-product-btn {
+.popular-product-btn {
   width: 20px;
   height: 20px;
   padding: 4px;
@@ -85,7 +86,7 @@
 
 .icon-shoping-cart {
   fill: var(--lite-green);
-} */
+}
 
 .popular-product-button {
   height: 20px;
@@ -114,4 +115,36 @@
 .icon-popular-btn:hover,
 .icon-popular-btn:focus {
   fill: var(--primary-cl);
+}
+
+.info-item {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.check-popular {
+  border: none;
+  background-color: var(--lite-green);
+  border-radius: 30px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.hidden {
+  display: none;
+}
+
+.buy-svg-popular,
+.check-svg-popular {
+  fill: var(--primary-cl);
+}
+
+.btn-wrapper {
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
