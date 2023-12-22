@@ -1,4 +1,8 @@
 import sprite from '../../../images/sprite.svg';
+import * as localStorage from '../../storage';
+
+// TODO: use one object for all local storage items keys
+const productsInCart = localStorage.getItem('bucket');
 
 const productCardTemplate = product => {
   return `<li class="checkout-products-list-item" data-id="${product._id}">
@@ -37,7 +41,10 @@ const productCardTemplate = product => {
                       <use href="${sprite}#icon-minus"></use>
                     </svg>
                   </button>
-                  <span class="product-qty-value">1</span>
+                  <span class="product-qty-value">${
+                    productsInCart.filter(item => item.id === product._id).pop()
+                      .amount
+                  }</span>
                   <button class="qty-increment-btn">
                     <svg class="icon-qty-increment" width="14" height="14">
                       <use href="${sprite}#icon-plus"></use>
