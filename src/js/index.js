@@ -1,7 +1,8 @@
-import './components/product-list';
-import './components/filters';
-import './components/popular-products';
-import './components/modal';
-import './components/discount-products';
 import './components/basket-quantity-of-products';
+import './components/filters';
+import './components/categories-products';
+import './components/product-list';
 import './components/pagination';
+import './components/popular-products';
+import './components/discount-products';
+import './components/modal';

@@ -1,10 +1,12 @@
+export function renderQuantityOrders() {
+  const ordersCounter = document.querySelectorAll('.js-order-counter');
+  const bucketLenght = localStorage.getItem('bucket');
 
-export function cartHederNumber() {
-     const cartHeader = document.querySelector('.cart-header');
-    const bucketLenght = localStorage.getItem('bucket');
-    cartHeader.textContent = `Cart (${
+  ordersCounter.forEach(element => {
+    element.textContent = `${
       bucketLenght === null ? 0 : JSON.parse(bucketLenght).length
-        })`;
-    
+    }`;
+  });
 }
-cartHederNumber();
+
+renderQuantityOrders();

@@ -11,7 +11,6 @@ const refs = {
   modalPicture: document.querySelector('.modal-pic'),
   modalContent: document.querySelector('.modal-main-content'),
 };
-console.log(refs.closeModalBtn);
 
 refs.openModal.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
@@ -25,8 +24,6 @@ async function toggleModal(event) {
   refs.modal.classList.toggle('is-hidden');
 
   if (!refs.modal.classList.contains('is-hidden')) {
-    // console.log(event.target.closest('li').dataset.id);
-
     try {
       const productID = event.target.closest('li').dataset.id;
       const product = await getProductById(productID);

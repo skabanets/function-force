@@ -1,6 +1,7 @@
 import productCardTemplate from './template';
 import * as localStorage from '../../storage';
 import * as foodAPI from '../../api';
+import { renderQuantityOrders } from '../basket-quantity-of-products';
 
 const refs = {
   container: document.querySelector('.checkout-products-list'),
@@ -51,6 +52,7 @@ const onItemRemoveBtnClick = event => {
   event.target.closest('li').classList.add('hide-list-item');
   setTimeout(() => {
     event.target.closest('li').remove();
+    renderQuantityOrders();
 
     // If Shopping cart is empty, then show empty cart conteiner
     if (bucket.length === 0) {
@@ -69,6 +71,7 @@ const onRemoveAllBtnClick = event => {
     item.classList.add('hide-list-item');
   }
 
+  renderQuantityOrders();
   // Show empty Cart container
   setTimeout(() => {
     showEmptyCartContainer();

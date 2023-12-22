@@ -12,7 +12,6 @@ const initPopularproducts = async () => {
     const results = await getPopularProducts(limit);
     const bucket = getItem('bucket');
     results.sort(sortByPopularity);
-    console.log(results);
 
     const res = results.map(
       element =>
