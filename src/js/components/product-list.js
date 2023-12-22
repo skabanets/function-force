@@ -1,23 +1,22 @@
 import { getProducts } from '../api';
 import { getItem } from '../storage';
 import { buyItem } from './buy-product';
+import sprite from '../../images/sprite.svg'
+
 const list = document.querySelector('.js-cart-list');
 
-const cards = async () => {
-  try {
-    let limit = 6;
-    const width = window.innerWidth;
-    if (width >= 768 && width < 1440) limit = 8;
-    else if (width >= 1440) limit = 9;
 
-    list.innerHTML = '';
+export const cards = async (page = 1) => {
+  try {
+    list.innerHTML =
+      '<li class="list-loader"><span class="loader"></span></li>';
     const { results } = await getProducts({
-      page: 25,
+      page: page,
       sort: {
         field: 'byABC',
         value: true,
       },
-      limit,
+      limit: calculateLimit(),
     });
     const bucket = getItem('bucket');
 
@@ -32,7 +31,7 @@ const cards = async () => {
       el.is10PercentOff
         ? `<svg class="discount-svg" width="60" height="60">
               <use
-                href="/function-force/sprite.213ea699.svg#icon-discount"
+                href="${sprite}#icon-discount"
               ></use>
             </svg>`
         : ''
@@ -57,7 +56,7 @@ const cards = async () => {
             <svg class="buy-svg" width="18" height="18">
               <use
                 class="check-svg"
-                href="/function-force/sprite.213ea699.svg#icon-check"
+                href="${sprite}#icon-check"
               ></use>
             </svg>
           </button>`
@@ -65,7 +64,7 @@ const cards = async () => {
             <svg class="buy-svg buy-btn" width="18" height="18">
               <use
                 class="buy-btn"
-                href="/function-force/sprite.213ea699.svg#icon-shopping-cart"
+                href="${sprite}#icon-shopping-cart"
               ></use>
             </svg>
           </button>`
@@ -74,7 +73,7 @@ const cards = async () => {
             <svg class="buy-svg " width="18" height="18">
               <use
                 class="buy-btn"
-                href="/function-force/sprite.213ea699.svg#icon-check"
+                href="${sprite}#icon-check"
               ></use>
             </svg>
           </button>
@@ -83,6 +82,7 @@ const cards = async () => {
   </li>
       `
     );
+    list.innerHTML = '';
 
     list.insertAdjacentHTML('beforeend', res.join(''));
   } catch (e) {
@@ -92,4 +92,17 @@ const cards = async () => {
 
 cards();
 
-list.addEventListener('click', e => buyItem(e.target));
+list.addEventListener('click', e =>
+  buyItem(e.target, 'buy-btn', '.cart', '.buy', '.buy-info')
+);
+
+export function calculateLimit() {
+  const width = window.innerWidth;
+  const MOBILE_WIDTH = 768;
+  const LARGE_WIDTH = 1440;
+
+  if (width >= MOBILE_WIDTH && width < LARGE_WIDTH) return 8;
+  if (width >= LARGE_WIDTH) return 9;
+
+  return 6; // Default limit
+}
