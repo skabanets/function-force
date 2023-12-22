@@ -3,21 +3,19 @@ import { getItem } from '../storage';
 import { buyItem } from './buy-product';
 const list = document.querySelector('.js-cart-list');
 
-const cards = async () => {
+export const cards = async (page = 1) => {
   try {
-    let limit = 6;
-    const width = window.innerWidth;
-    if (width >= 768 && width < 1440) limit = 8;
-    else if (width >= 1440) limit = 9;
-
-    list.innerHTML = '';
+    list.innerHTML =
+    
+      '<li class="list-loader"><span class="loader"></span></li>'
+    ;
     const { results } = await getProducts({
-      page: 25,
+      page: page,
       sort: {
         field: 'byABC',
         value: true,
       },
-      limit,
+      limit: calculateLimit(),
     });
     const bucket = getItem('bucket');
 
@@ -83,6 +81,7 @@ const cards = async () => {
   </li>
       `
     );
+    list.innerHTML = '';
 
     list.insertAdjacentHTML('beforeend', res.join(''));
   } catch (e) {
@@ -92,4 +91,17 @@ const cards = async () => {
 
 cards();
 
-list.addEventListener('click', e => buyItem(e.target));
+list.addEventListener('click', e =>
+  buyItem(e.target, 'buy-btn', '.cart', '.buy', '.buy-info')
+);
+
+export function calculateLimit() {
+  const width = window.innerWidth;
+  const MOBILE_WIDTH = 768;
+  const LARGE_WIDTH = 1440;
+
+  if (width >= MOBILE_WIDTH && width < LARGE_WIDTH) return 8;
+  if (width >= LARGE_WIDTH) return 9;
+
+  return 6; // Default limit
+}
