@@ -4,7 +4,7 @@ const discountList = document.querySelector('.js-discount-list');
 async function renderDiscountProducts() {
   try {
     const discountProducts = await getDiscountedProducts();
-    console.log(discountProducts);
+    // console.log(discountProducts);
     const itemsHTML = discountProducts
       .slice(0, 2)
       .map(
