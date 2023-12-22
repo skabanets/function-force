@@ -5,14 +5,17 @@ const list = document.querySelector('.js-cart-list');
 
 export const cards = async (page = 1) => {
   try {
-    list.innerHTML = '';
+    list.innerHTML =
+    
+      '<li class="list-loader"><span class="loader"></span></li>'
+    ;
     const { results } = await getProducts({
       page: page,
       sort: {
         field: 'byABC',
         value: true,
       },
-     limit: calculateLimit(),
+      limit: calculateLimit(),
     });
     const bucket = getItem('bucket');
 
@@ -78,6 +81,7 @@ export const cards = async (page = 1) => {
   </li>
       `
     );
+    list.innerHTML = '';
 
     list.insertAdjacentHTML('beforeend', res.join(''));
   } catch (e) {
@@ -99,5 +103,5 @@ export function calculateLimit() {
   if (width >= MOBILE_WIDTH && width < LARGE_WIDTH) return 8;
   if (width >= LARGE_WIDTH) return 9;
 
-  return 100; // Default limit
-};
+  return 6; // Default limit
+}

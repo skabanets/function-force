@@ -1,6 +1,11 @@
 import { cards, calculateLimit } from './product-list';
 import { getProducts } from '../api';
 
+const mobileDisp = () => {
+  const width = window.innerWidth;
+  return width < 376 ? true : false;
+};
+
 const displayPagination = async () => {
   let page = 1;
   const list = document.querySelector('.pg-list');
@@ -23,8 +28,14 @@ const displayPagination = async () => {
     arr.push(`<li class="${classes}" data-pg="${i + 1}">${i + 1}</li>`);
   }
 
-  const dots = '<li class="pg-item dotDis">...</li>';
-  arr.splice(2, totalPages - 4, dots);
+  if (mobileDisp()) {
+    const dots = '<li class="pg-item dotDis">...</li>';
+    arr.splice(1, totalPages - 2, dots);
+    console.log(arr);
+  } else {
+    const dots = '<li class="pg-item dotDis">...</li>';
+    arr.splice(2, totalPages - 4, dots);
+  }
 
   list.insertAdjacentHTML('beforeend', arr.join(''));
   updateButtonState();
@@ -63,13 +74,19 @@ const displayPagination = async () => {
     const active = document.querySelector('.pg-active');
     active.classList.remove('pg-active');
     console.log(page);
-
-    page > 2 && page < totalPages - 2
-      ? list.childNodes[2].classList.toggle('pg-active')
-      : 
-      list.childNodes[page < 3 ? page - 1 : page + 4 - totalPages].classList.add(
-          'pg-active'
-        );
+    if (mobileDisp()) {
+      page > 1 && page < totalPages - 1
+        ? list.childNodes[1].classList.toggle('pg-active')
+        : list.childNodes[
+            page < 2 ? page - 1 : page + 2 - totalPages
+          ].classList.add('pg-active');
+    } else {
+      page > 2 && page < totalPages - 2
+        ? list.childNodes[2].classList.toggle('pg-active')
+        : list.childNodes[
+            page < 3 ? page - 1 : page + 4 - totalPages
+          ].classList.add('pg-active');
+    }
   };
 
   function updateButtonState() {
@@ -78,7 +95,9 @@ const displayPagination = async () => {
     rightBtns.childNodes[1].classList.toggle('dis', page == totalPages);
     rightBtns.childNodes[3].classList.toggle('dis', page == totalPages);
     list.childNodes[0].classList.toggle('dis', page == 1);
-    list.childNodes[4].classList.toggle('dis', page == totalPages);
+    mobileDisp()
+      ? list.childNodes[2].classList.toggle('dis', page == totalPages)
+      : list.childNodes[4].classList.toggle('dis', page == totalPages);
   }
 
   list.addEventListener('click', e => changePage(e.target));
