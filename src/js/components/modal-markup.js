@@ -1,13 +1,5 @@
 export function getMarkup(product) {
-  return `
-    
- 
-
-   
-      
-
-      
-        <h2 class="modal-title">${product.name}</h2>
+  return ` <h2 class="modal-title">${product.name}</h2>
         <div class="modal-box-info">
           <p class="classification">
             Category:<span class="modal-info">${product.category}</span>
@@ -23,10 +15,5 @@ export function getMarkup(product) {
         <p class="modal-description">
         ${product.desc}
         </p>
-     
-
-
-  
-    
     `;
 }

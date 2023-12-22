@@ -36,14 +36,16 @@ async function toggleModal(event) {
       refs.modalPicture.setAttribute('src', product.img);
       refs.modalContent.innerHTML = markup;
       refs.modalPrice.innerHTML = `$${product.price}`;
+
+      window.addEventListener('keydown', handleEscKeyPress);
     } catch (error) {}
   } else {
     refs.modalPicture.setAttribute('src', '');
     refs.modalContent.innerHTML = '';
     refs.modalPrice.innerHTML = '';
+    // Знімаємо прослуховувач клавіші 'Esc' після закриття вікна
+    window.removeEventListener('keydown', handleEscKeyPress);
   }
-
-  window.addEventListener('keydown', handleEscKeyPress);
 }
 
 function handleEscKeyPress(event) {
