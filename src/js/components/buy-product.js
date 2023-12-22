@@ -1,5 +1,5 @@
 import { getItem, setItem } from '../storage';
-import {cartHederNumber} from './basket-quantity-of-products'
+import { renderQuantityOrders } from './basket-quantity-of-products';
 
 // функцію визивати ось так buyItem(e.target, 'клас1', '.клас2', '.клас3', '.клас4')
 // в '' будуть приклади слід писати як там, тобто якщо почитанається з '.клас' пишем також '.клас', а не 'клас'
@@ -16,5 +16,5 @@ export const buyItem = (target, class1, class2, class3, class4) => {
   const checkBtn = target.closest(class4).lastElementChild; // клас в якому лежить ваша ціна та кнопка '.buy-info'
   buyBtn.classList.toggle('hidden');
   checkBtn.classList.toggle('hidden');
-  cartHederNumber();
+  renderQuantityOrders();
 };
