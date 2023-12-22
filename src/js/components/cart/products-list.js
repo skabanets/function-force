@@ -65,7 +65,7 @@ const onRemoveAllBtnClick = event => {
   localStorage.setItem('bucket', []);
 
   // Remove items from a list
-  for (item of refs.container.children) {
+  for (const item of refs.container.children) {
     item.classList.add('hide-list-item');
   }
 
