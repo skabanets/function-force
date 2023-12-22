@@ -85,7 +85,7 @@
   }
 }
 
-.modal-picture-box {
+.modal-picture-box-container {
   width: 295px;
   height: 212px;
   border-radius: 10px;
@@ -96,7 +96,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .modal-picture-box {
+  .modal-picture-box-container {
     width: 240px;
     height: 212px;
     border-radius: 10px;
@@ -110,6 +110,7 @@
 .modal-pic {
   width: 160px;
   height: 160px;
+  display: block;
 }
 
 .modal-title {
@@ -158,12 +159,14 @@
   color: rgba(1, 1, 1, 0.7);
   font-size: 14px;
   line-height: 1.28;
+  max-width: 295px;
 }
 
 @media screen and (min-width: 768px) {
   .modal-description {
     font-size: 16px;
     line-height: 1.25;
+    max-width: 256px;
   }
 }
 
@@ -265,4 +268,8 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.modal-shopping-cart {
+  fill: #e8e8e2;
 }
