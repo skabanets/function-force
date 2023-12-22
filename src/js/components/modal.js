@@ -25,12 +25,12 @@ async function toggleModal(event) {
   refs.modal.classList.toggle('is-hidden');
 
   if (!refs.modal.classList.contains('is-hidden')) {
-    console.log(event.target.closest('li').dataset.id);
+    // console.log(event.target.closest('li').dataset.id);
 
     try {
       const productID = event.target.closest('li').dataset.id;
       const product = await getProductById(productID);
-      console.log(product);
+      // console.log(product);
       const markup = getMarkup(product);
 
       refs.modalPicture.setAttribute('src', product.img);
