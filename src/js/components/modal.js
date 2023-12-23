@@ -2,7 +2,7 @@ import { getProductById } from '../api';
 import { getMarkup } from './modal-markup';
 
 const refs = {
-  openModal: document.querySelector('.js-cart-list'),
+  openModal: document.querySelector('.products-container'),
   closeModalBtn: document.querySelector('.popup-modal-close'),
   modal: document.querySelector('.modal-backdrops'),
   modalPattern: document.querySelector('.modal-window'),
@@ -17,9 +17,11 @@ refs.closeModalBtn.addEventListener('click', toggleModal);
 refs.modal.addEventListener('click', handleModalClick);
 
 async function toggleModal(event) {
-  if (event && event.target.classList.contains('buy-svg')) {
+  if (
+    event.target.closest('.js-buy-button') ||
+    event.target.closest('.pagination-container')
+  )
     return;
-  }
 
   refs.modal.classList.toggle('is-hidden');
 
@@ -32,7 +34,7 @@ async function toggleModal(event) {
 
       refs.modalPicture.setAttribute('src', product.img);
       refs.modalContent.innerHTML = markup;
-      refs.modalPrice.innerHTML = `$${product.price}`;
+      refs.modalPrice.innerHTML = `&#36;${product.price}`;
 
       window.addEventListener('keydown', handleEscKeyPress);
     } catch (error) {}
