@@ -1,5 +1,25 @@
+import sprite from '../../images/sprite.svg';
+import { getItem } from '../storage';
+
 export function getMarkup(product) {
-  return ` <h2 class="modal-title">${product.name}</h2>
+  const bucket = getItem('bucket');
+
+  return ` 
+    <div class="modal-window" data-id="${product._id}" data-price="${product.price}">
+      <button type="button" class="modal-close-btn popup-modal-close">
+      <svg class="modal-close-icon">
+        <use href="${sprite}#close"></use>
+      </svg>
+    </button>
+
+    <div class="modal-main-content-box">
+      <div class="modal-picture-box-container">
+        <img class="modal-pic" src="${
+          product.img
+        }" alt="picture of the vegetable" />
+      </div>
+      <div class="modal-main-content">
+        <h2 class="modal-title">${product.name}</h2>
         <div class="modal-box-info">
           <p class="classification">
             Category:<span class="modal-info">${product.category}</span>
@@ -15,5 +35,41 @@ export function getMarkup(product) {
         <p class="modal-description">
         ${product.desc}
         </p>
+      </div>
+    </div>
+
+    <div class="modal-box-bottom">
+      <p class="modal-price">$${product.price}</p>
+
+
+  
+      ${
+        bucket.some(item => item.id === product._id)
+          ? `      <button
+        type="button"
+        class="added-to"
+        data-modal-added-to
+      >
+        Added to<svg class="modal-shopping-cart" width="18" height="18">
+          <use href="${sprite}#icon-shopping-cart"></use>
+        </svg>
+      </button>`
+          : `<button type="button" class="add-to js-buy-btn" data-modal-add-to>
+        Add to<svg class="modal-shopping-cart js-buy-btn" width="18" height="18">
+          <use href="${sprite}#icon-shopping-cart"></use>
+        </svg>
+      </button>`
+      }
+            <button
+        type="button"
+        class="added-to hidden"
+        data-modal-added-to
+      >
+        Added to<svg class="modal-shopping-cart" width="18" height="18">
+          <use href="${sprite}#icon-shopping-cart"></use>
+        </svg>
+      </button>
+    </div>
+    </div>
     `;
 }

@@ -22,7 +22,7 @@ export const cards = async (page = 1) => {
     const res = results.map(
       el =>
         `
-  <li class="cart" data-id="${el._id}">
+  <li class="cart" data-id="${el._id}" data-price="${el.price}"">
   <div class="cart-container">
   <div class="cart-img-container">
     <img src="${el.img}" alt="" class="cart-img">

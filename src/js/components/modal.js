@@ -1,48 +1,56 @@
 import { getProductById } from '../api';
+import { buyItem } from './buy-product';
 import { getMarkup } from './modal-markup';
 
 const refs = {
-  openModal: document.querySelector('.products-container'),
-  closeModalBtn: document.querySelector('.popup-modal-close'),
+  popular: document.querySelector('.popular-product-list'),
+  products: document.querySelector('.js-cart-list'),
+  discount: document.querySelector('.js-discount-list'),
   modal: document.querySelector('.modal-backdrops'),
-  modalPattern: document.querySelector('.modal-window'),
-  modalContainer: document.querySelector('.modal-main-content-box'),
-  modalPrice: document.querySelector('.modal-price'),
-  modalPicture: document.querySelector('.modal-pic'),
-  modalContent: document.querySelector('.modal-main-content'),
 };
 
-refs.openModal.addEventListener('click', toggleModal);
-refs.closeModalBtn.addEventListener('click', toggleModal);
-refs.modal.addEventListener('click', handleModalClick);
+refs.popular.addEventListener('click', toggleModal);
+refs.products.addEventListener('click', toggleModal);
+refs.discount.addEventListener('click', toggleModal);
 
 async function toggleModal(event) {
-  if (
-    event?.target.closest('.js-buy-button') ||
-    event?.target.closest('.pagination-container')
-  )
-    return;
+  try {
+    if (event?.target.closest('.js-buy-button')) return;
 
-  refs.modal.classList.toggle('is-hidden');
+    refs.modal.classList.toggle('is-hidden');
 
-  if (!refs.modal.classList.contains('is-hidden')) {
-    try {
+    if (!refs.modal.classList.contains('is-hidden')) {
       const productID = event.target.closest('li').dataset.id;
       const product = await getProductById(productID);
       const markup = getMarkup(product);
+      const modalBackdrop = document.querySelector('.modal-backdrops');
 
-      refs.modalPicture.setAttribute('src', product.img);
-      refs.modalContent.innerHTML = markup;
-      refs.modalPrice.innerHTML = `&#36;${product.price}`;
+      modalBackdrop.insertAdjacentHTML(`beforeend`, markup);
+      const modalPattern = document.querySelector('.modal-window');
+
+      modalPattern.addEventListener('click', e =>
+        buyItem(
+          e.target,
+          'js-buy-btn',
+          '.modal-window',
+          '.add-to',
+          '.modal-box-bottom'
+        )
+      );
+
+      const closeModalBtn = document.querySelector('.popup-modal-close');
+
+      refs.modal.addEventListener('click', handleModalClick);
+      closeModalBtn.addEventListener('click', toggleModal);
 
       window.addEventListener('keydown', handleEscKeyPress);
-    } catch (error) {}
-  } else {
-    refs.modalPicture.setAttribute('src', '');
-    refs.modalContent.innerHTML = '';
-    refs.modalPrice.innerHTML = '';
-    // Знімаємо прослуховувач клавіші 'Esc' після закриття вікна
-    window.removeEventListener('keydown', handleEscKeyPress);
+    } else {
+      refs.modal.innerHTML = '';
+      // Знімаємо прослуховувач клавіші 'Esc' після закриття вікна
+      window.removeEventListener('keydown', handleEscKeyPress);
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 
