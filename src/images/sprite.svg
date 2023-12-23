@@ -62,7 +62,6 @@
 <path stroke-width="2" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M22.667 21.333l-5.333-5.333 5.333-5.333"></path>
 <path stroke-width="2" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M17.333 21.333l-5.333-5.333 5.333-5.333"></path>
 </symbol>
-
 <symbol id="icon-drop-down" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M8 12l8 8 8-8"></path>
 </symbol>
