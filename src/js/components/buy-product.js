@@ -6,9 +6,11 @@ import { renderQuantityOrders } from './basket-quantity-of-products';
 export const buyItem = (target, class1, class2, class3, class4) => {
   if (!target.classList.contains(class1)) return; // тут повинен бути клас який містить вашу кнопку 'buy-btn'
   const id = target.closest(class2).dataset.id; // клас вашой картки або клас в якому ви зберігаєте ід '.cart'
+  const price = target.closest(class2).dataset.price; 
   const data = {
     id,
     amount: 1,
+    price
   };
   const bucket = getItem('bucket');
   setItem('bucket', [...bucket, data]);
