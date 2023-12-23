@@ -124,7 +124,7 @@
 
 .check-popular {
   border: none;
-  background-color: var(--lite-green);
+  background-color: var(--primary-cl);
   border-radius: 30px;
   width: 20px;
   height: 20px;
@@ -140,7 +140,7 @@
 
 .buy-svg-popular,
 .check-svg-popular {
-  fill: var(--primary-cl);
+  fill: var(--lite-green);
 }
 
 .btn-wrapper {
