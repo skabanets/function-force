@@ -113,7 +113,7 @@
   }
 }
 
-.discount-button {
+.discount-product-button {
   height: 34px;
   width: 34px;
   border-radius: 30px;
@@ -122,11 +122,31 @@
   padding: 8px;
 }
 
-.discount-button:hover,
-.discount-button:focus {
+.discount-product-button:hover,
+.discount-product-button:focus {
   background-color: #586f1f;
 }
 
-.discount-shopping-icon {
+.icon-discount-btn {
   fill: #ffffff;
+}
+/* ////\\\\ */
+.check-discount {
+  border: none;
+  background-color: var(--lite-green);
+  border-radius: 30px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.buy-svg-discount,
+.check-svg-discount {
+  fill: var(--primary-cl);
+}
+
+.btn-wrapper-discount {
 }
