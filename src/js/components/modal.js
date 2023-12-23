@@ -18,8 +18,8 @@ refs.modal.addEventListener('click', handleModalClick);
 
 async function toggleModal(event) {
   if (
-    event.target.closest('.js-buy-button') ||
-    event.target.closest('.pagination-container')
+    event?.target.closest('.js-buy-button') ||
+    event?.target.closest('.pagination-container')
   )
     return;
 
@@ -29,7 +29,6 @@ async function toggleModal(event) {
     try {
       const productID = event.target.closest('li').dataset.id;
       const product = await getProductById(productID);
-      // console.log(product);
       const markup = getMarkup(product);
 
       refs.modalPicture.setAttribute('src', product.img);
