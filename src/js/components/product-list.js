@@ -22,7 +22,7 @@ export const cards = async (page = 1) => {
     const res = results.map(
       el =>
         `
-  <li class="cart" data-id="${el._id}" data-price="${el.price}"">
+  <li class="cart" data-id="${el._id}" data-price="${el.price}">
   <div class="cart-container">
   <div class="cart-img-container">
     <img src="${el.img}" alt="" class="cart-img">
@@ -47,7 +47,7 @@ export const cards = async (page = 1) => {
       }</span></li>
     </ul>
     <div class="buy-info">
-      <p class="buy-price">$${el.price}</p>
+      <p class="buy-price">&#36;${el.price}</p>
     
       ${
         bucket.some(item => item.id === el._id)

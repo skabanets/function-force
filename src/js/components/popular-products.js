@@ -16,7 +16,9 @@ const initPopularproducts = async () => {
     const res = results.map(
       element =>
         `
-  <li class="popular-product-item" data-id="${element._id}" data-price="${element.price}"">
+  <li class="popular-product-item" data-id="${element._id}" data-price="${
+          element.price
+        }">
       <div class="product-image-container">
         <img
           src="${element.img}"

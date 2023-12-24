@@ -5,7 +5,9 @@ export function getMarkup(product) {
   const bucket = getItem('bucket');
 
   return ` 
-    <div class="modal-window" data-id="${product._id}" data-price="${product.price}">
+    <div class="modal-window" data-id="${product._id}" data-price="${
+    product.price
+  }">
       <button type="button" class="modal-close-btn popup-modal-close">
       <svg class="modal-close-icon">
         <use href="${sprite}#close"></use>
@@ -39,7 +41,7 @@ export function getMarkup(product) {
     </div>
 
     <div class="modal-box-bottom">
-      <p class="modal-price">$${product.price}</p>
+      <p class="modal-price">&#36;${product.price}</p>
 
 
   
