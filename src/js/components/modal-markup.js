@@ -16,9 +16,12 @@ export function getMarkup(product) {
 
     <div class="modal-main-content-box">
       <div class="modal-picture-box-container">
-        <img class="modal-pic" src="${
-          product.img
-        }" alt="picture of the vegetable" />
+        <img
+          class="modal-pic"
+          src="${product.img}" 
+          alt="${product.name}"
+          loading="lazy" 
+        />
       </div>
       <div class="modal-main-content">
         <h2 class="modal-title">${product.name}</h2>

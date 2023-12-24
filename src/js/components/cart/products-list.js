@@ -3,6 +3,9 @@ import * as localStorage from '../../storage';
 import * as foodAPI from '../../api';
 import { renderQuantityOrders } from '../basket-quantity-of-products';
 import { countTotalPrice } from './total-price';
+import LazyLoad from 'vanilla-lazyload';
+
+const lazyLoadInstance = new LazyLoad();
 
 const refs = {
   container: document.querySelector('.checkout-products-list'),
@@ -160,6 +163,7 @@ const renderProductsList = async () => {
     const markup = productsData.map(productCardTemplate).join('');
     refs.container.innerHTML = markup;
 
+    lazyLoadInstance.update();
     renderQuantityOrders();
     countTotalPrice();
   } catch (error) {

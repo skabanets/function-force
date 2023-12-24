@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "axios": "^1.6.2",
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "vanilla-lazyload": "^17.8.5"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
