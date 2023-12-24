@@ -11,7 +11,7 @@
 }
 
 .modal-window {
-  max-width: 335px;
+  width: 335px;
   height: auto;
   border-radius: 20px;
   background-color: #fafafa;
@@ -160,7 +160,7 @@
   font-size: 14px;
   line-height: 1.28;
   max-width: 295px;
-  max-height: 150px;
+  max-height: 160px;
   overflow: scroll;
 }
 
@@ -169,8 +169,7 @@
     font-size: 16px;
     line-height: 1.25;
     max-width: 256px;
-    height: 100%;
-    overflow: hidden;
+    max-height: 100%;
   }
 }
 
