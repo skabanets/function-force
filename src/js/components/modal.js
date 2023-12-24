@@ -15,8 +15,13 @@ refs.discount.addEventListener('click', toggleModal);
 
 async function toggleModal(event) {
   try {
-    if (event?.target.closest('.js-buy-button')) return;
 
+    if (
+      event?.target.closest('.js-buy-button') ||
+      event?.target.nodeName === 'UL' ||
+      event?.target.classList.contains('list-loader')
+    )
+      return;
     refs.modal.classList.toggle('is-hidden');
 
     if (!refs.modal.classList.contains('is-hidden')) {

@@ -11,14 +11,26 @@ export const cards = async (page = 1) => {
   try {
     list.innerHTML =
       '<li class="list-loader"><span class="loader"></span></li>';
-    const { results } = await getProducts({
-      page: page,
-      sort: {
-        field: 'byABC',
-        value: true,
-      },
-      limit: calculateLimit(),
-    });
+    const data = getItem('pageData');
+const { results, totalPages } = await getProducts({
+  category: data.category ? data.category : '',
+  ...data.sortBy,
+  keyword: data.keyword ? data.keyword : '',
+  page: page,
+  limit: calculateLimit(),
+});
+
+
+    if(page === 1) displayPagination(totalPages);
+
+    if (results.length < 1) {
+      const message = document.querySelector('.empty-storage');
+      message.style.display = 'block';
+      list.innerHTML = '';
+      list.appendChild(message);
+      return;
+    }
+
     const bucket = getItem('bucket');
 
     const res = results.map(

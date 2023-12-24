@@ -71,6 +71,7 @@ const displayPagination = async () => {
   };
 
   const step = () => {
+    console.log(page);
     const active = document.querySelector('.pg-active');
     active.classList.remove('pg-active');
     if (mobileDisp()) {
