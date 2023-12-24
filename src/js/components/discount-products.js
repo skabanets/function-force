@@ -13,7 +13,7 @@ async function renderDiscountProducts() {
       .slice(0, 2)
       .map(
         element => `
-          <li class="discount-item js-product-item" data-id="${
+          <li class="discount-item product-card js-product-item" data-id="${
             element._id
           }" data-price="${element.price}">
             <svg class="discount-icon" width="60" height="60">
