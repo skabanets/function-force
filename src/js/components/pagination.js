@@ -14,7 +14,6 @@ export const displayPagination = async totalPages => {
     return;
   } else {
     pgContainer.classList.remove('hidden');
-
   }
   let page = 1;
   const list = document.querySelector('.pg-list');
@@ -81,8 +80,6 @@ export const displayPagination = async totalPages => {
   };
 
   const step = () => {
-    console.log(list.childNodes);
-
     const active = document.querySelector('.pg-active');
     active.classList.remove('pg-active');
 
