@@ -15,10 +15,13 @@ refs.discount.addEventListener('click', toggleModal);
 
 async function toggleModal(event) {
   try {
-    if (event?.target.closest('.js-buy-button')) return;
-
+    if (
+      event?.target.closest('.js-buy-button') ||
+      event?.target.nodeName === 'UL' ||
+      event?.target.classList.contains('list-loader')
+    )
+      return;
     refs.modal.classList.toggle('is-hidden');
-
     if (!refs.modal.classList.contains('is-hidden')) {
       const productID = event.target.closest('li').dataset.id;
       const product = await getProductById(productID);
@@ -64,7 +67,7 @@ function handleEscKeyPress(event) {
 
 function handleModalClick(event) {
   // Закриваємо модальне вікно, якщо клікнуто поза його межами
-  if (event.target === refs.modal) {
+  if (event.target.classList.contains('modal-backdrops')) {
     toggleModal();
   }
 }

@@ -10,3 +10,5 @@ import './components/footer';
 import './components/success-susubscribing-modal';
 import './components/error-subscribing-modal';
 import './components/scroll-up-btn';
+import './components/sorting-products'
+import './components/search'
