@@ -11,9 +11,8 @@ const foodAPI = axios.create({
 */
 // Get Products by params
 export const getProducts = async params => {
-  const { sort, ...configParams } = params;
   const response = await foodAPI.get('/products', {
-    params: { ...configParams, [sort.field]: sort.value },
+    params: {...params},
   });
 
   return response.data;

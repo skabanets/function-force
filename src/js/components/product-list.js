@@ -2,6 +2,7 @@ import { getProducts } from '../api';
 import { getItem } from '../storage';
 import { buyItem } from './buy-product';
 import sprite from '../../images/sprite.svg';
+import { displayPagination } from './pagination';
 
 const list = document.querySelector('.js-cart-list');
 
@@ -9,14 +10,27 @@ export const cards = async (page = 1) => {
   try {
     list.innerHTML =
       '<li class="list-loader"><span class="loader"></span></li>';
-    const { results } = await getProducts({
+    const data = getItem('pageData');
+    const { results, totalPages } = await getProducts({
+      ...data,
       page: page,
-      sort: {
-        field: 'byABC',
-        value: true,
-      },
       limit: calculateLimit(),
     });
+
+
+    if(page === 1) displayPagination(totalPages);
+
+    if (results.length < 1) {
+      const message = document.querySelector('.empty-storage');
+      message.style.display = 'block';
+      list.innerHTML = '';
+      list.appendChild(message);
+
+      console.log(message);
+
+      return;
+    }
+
     const bucket = getItem('bucket');
 
     const res = results.map(

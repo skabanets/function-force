@@ -1,21 +1,29 @@
-import { cards, calculateLimit } from './product-list';
-import { getProducts } from '../api';
+import { cards } from './product-list';
 
 const mobileDisp = () => {
   const width = window.innerWidth;
   return width < 376 ? true : false;
 };
 
-const displayPagination = async () => {
+export const displayPagination = async totalPages => {
+  console.log(totalPages);
+  const pgContainer = document.querySelector('.pagination-container');
+
+  if (totalPages < 2) {
+    pgContainer.classList.add('hidden');
+    return;
+  } else {
+    pgContainer.classList.remove('hidden');
+
+  }
   let page = 1;
   const list = document.querySelector('.pg-list');
+  list.innerHTML = '';
   const leftBtns = document.querySelector('.left-btns');
   const rightBtns = document.querySelector('.right-btns');
 
-  const { totalPages } = await getProducts({
-    sort: { field: 'byABC', value: true },
-    limit: calculateLimit(),
-  });
+  if (totalPages < 6) list.classList.add('less-six');
+
   const arr = [];
 
   for (let i = 0; i < totalPages; i++) {
@@ -31,7 +39,8 @@ const displayPagination = async () => {
   if (mobileDisp()) {
     const dots = '<li class="pg-item dotDis">...</li>';
     arr.splice(1, totalPages - 2, dots);
-    console.log(arr);
+  } else if (totalPages < 6) {
+    arr;
   } else {
     const dots = '<li class="pg-item dotDis">...</li>';
     arr.splice(2, totalPages - 4, dots);
@@ -61,6 +70,7 @@ const displayPagination = async () => {
     updateButtonState();
     step();
   };
+
   const changeRight = target => {
     if (page == totalPages || target.classList.contains('right-btns')) return;
     const parent = target.closest('.pg-arrow');
@@ -71,14 +81,19 @@ const displayPagination = async () => {
   };
 
   const step = () => {
+    console.log(list.childNodes);
+
     const active = document.querySelector('.pg-active');
     active.classList.remove('pg-active');
+
     if (mobileDisp()) {
       page > 1 && page < totalPages - 1
         ? list.childNodes[1].classList.toggle('pg-active')
         : list.childNodes[
             page < 2 ? page - 1 : page + 2 - totalPages
           ].classList.add('pg-active');
+    } else if (list.classList.contains('less-six')) {
+      list.childNodes[page - 1].classList.add('pg-active');
     } else {
       page > 2 && page < totalPages - 2
         ? list.childNodes[2].classList.toggle('pg-active')
@@ -94,14 +109,13 @@ const displayPagination = async () => {
     rightBtns.childNodes[1].classList.toggle('dis', page == totalPages);
     rightBtns.childNodes[3].classList.toggle('dis', page == totalPages);
     list.childNodes[0].classList.toggle('dis', page == 1);
-    mobileDisp()
-      ? list.childNodes[2].classList.toggle('dis', page == totalPages)
-      : list.childNodes[4].classList.toggle('dis', page == totalPages);
+    list.childNodes[list.childNodes.length - 1].classList.toggle(
+      'dis',
+      page == totalPages
+    );
   }
 
   list.addEventListener('click', e => changePage(e.target));
   leftBtns.addEventListener('click', e => changeLeft(e.target));
   rightBtns.addEventListener('click', e => changeRight(e.target));
 };
-
-displayPagination();
