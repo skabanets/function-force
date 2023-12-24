@@ -41,9 +41,17 @@
 }
 .info {
   display: flex;
+  flex-wrap: wrap;
   gap: 9px;
-  margin-bottom: 40px;
+  height: 54px;
 }
+
+@media screen and (min-width: 1440px) {
+  .info {
+    height: 37px;
+  }
+}
+
 .info-item {
   font-family: Neue Montreal;
   font-size: 12px;
@@ -189,7 +197,7 @@
     font-size: 20px;
     line-height: 1.2;
   }
-  .list-loader{
+  .list-loader {
     height: 1550px;
   }
 }
@@ -208,7 +216,7 @@
     flex-wrap: wrap;
     margin-bottom: 20px;
   }
-    .list-loader{
+  .list-loader {
     height: 1169px;
   }
 }
