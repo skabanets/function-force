@@ -2,7 +2,9 @@ import sprite from '../../images/sprite.svg';
 import { getDiscountedProducts } from '../api';
 import { buyItem } from './buy-product';
 import { getItem } from '../storage';
+import LazyLoad from 'vanilla-lazyload';
 
+const lazyLoadInstance = new LazyLoad();
 const bucket = getItem('bucket');
 const discountList = document.querySelector('.js-discount-list');
 async function renderDiscountProducts() {
@@ -22,8 +24,9 @@ async function renderDiscountProducts() {
             <div class="discount-container-img">
               <img
                 src="${element.img}"
-                alt="${element.name}-img"
-                class="discount-img"
+                alt="${element.name}"
+                class="lazy discount-img"
+                loading="lazy"
               />
             </div>
             <div class="discount-order">
@@ -64,6 +67,8 @@ async function renderDiscountProducts() {
       )
       .join('');
     discountList.insertAdjacentHTML('beforeend', itemsHTML);
+
+    lazyLoadInstance.update();
   } catch (error) {
     console.error('Error rendering discount items:', error);
   }

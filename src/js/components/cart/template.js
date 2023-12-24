@@ -9,7 +9,7 @@ const productCardTemplate = product => {
           <div class="checkout-product-item-card">
             <div class="checkout-product-item-card-img">
               <img
-                class="checkout-product-img"
+                class="checkout-product-img lazy"
                 src="${product.img}"
                 alt="${product.name}"
                 width="64"
