@@ -16,9 +16,9 @@ const initPopularproducts = async () => {
     const res = results.map(
       element =>
         `
-  <li class="popular-product-item" data-id="${element._id}" data-price="${
-          element.price
-        }">
+  <li class="popular-product-item js-product-item" data-id="${
+    element._id
+  }" data-price="${element.price}">
       <div class="product-image-container">
         <img
           src="${element.img}"
@@ -44,7 +44,7 @@ const initPopularproducts = async () => {
       <div class="btn-wrapper">
       ${
         bucket.some(item => item.id === element._id)
-          ? `<button class="check-popular" type="button" disabled>
+          ? `<button class="check-popular js-bought-btn" type="button" disabled>
             <svg class="buy-svg-popular" width="12" height="12">
               <use
                 class="check-svg-popular"
@@ -61,7 +61,7 @@ const initPopularproducts = async () => {
             </svg>
           </button>`
       }
-      <button class="check-popular hidden" type="button">
+      <button class="check-popular js-bought-btn hidden" type="button">
             <svg class="buy-svg-popular" width="12" height="12">
               <use
                 class="btn-js"
@@ -92,12 +92,13 @@ function sortByPopularity(a, b) {
   return 0;
 }
 
-list.addEventListener('click', e =>
-  buyItem(
-    e.target,
-    'btn-js',
-    '.popular-product-item',
-    '.popular-product-button',
-    '.btn-wrapper'
-  )
-);
+list.addEventListener('click', e => {
+  if (
+    !e.target.closest('button') ||
+    !e.target.closest('button').classList.contains('js-buy-button')
+  ) {
+    return;
+  }
+
+  buyItem(e.target.closest('li.js-product-item').dataset.id);
+});
