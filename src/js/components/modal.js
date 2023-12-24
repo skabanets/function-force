@@ -20,9 +20,7 @@ async function toggleModal(event) {
       event?.target.nodeName === 'UL'
     )
       return;
-    console.log('down');
     refs.modal.classList.toggle('is-hidden');
-    console.log('up');
     if (!refs.modal.classList.contains('is-hidden')) {
       const productID = event.target.closest('li').dataset.id;
       const product = await getProductById(productID);
@@ -69,7 +67,6 @@ function handleEscKeyPress(event) {
 function handleModalClick(event) {
   // Закриваємо модальне вікно, якщо клікнуто поза його межами
   if (event.target.classList.contains('modal-backdrops')) {
-    console.log('---');
     toggleModal();
   }
 }
