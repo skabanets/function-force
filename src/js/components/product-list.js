@@ -2,7 +2,9 @@ import { getProducts } from '../api';
 import { getItem } from '../storage';
 import { buyItem } from './buy-product';
 import sprite from '../../images/sprite.svg';
+import LazyLoad from 'vanilla-lazyload';
 
+const lazyLoadInstance = new LazyLoad();
 const list = document.querySelector('.js-cart-list');
 
 export const cards = async (page = 1) => {
@@ -22,10 +24,19 @@ export const cards = async (page = 1) => {
     const res = results.map(
       el =>
         `
-  <li class="cart product-card js-product-item" data-id="${el._id}" data-price="${el.price}">
+  <li
+    class="cart product-card js-product-item"
+    data-id="${el._id}" 
+    data-price="${el.price}"
+  >
   <div class="cart-container">
   <div class="cart-img-container">
-    <img src="${el.img}" alt="" class="cart-img">
+    <img
+      data-src="${el.img}"
+      alt="${el.name}" 
+      class="lazy cart-img" 
+      loading="lazy"
+    >
     ${
       el.is10PercentOff
         ? `<svg class="discount-svg" width="60" height="60">
@@ -84,6 +95,8 @@ export const cards = async (page = 1) => {
     list.innerHTML = '';
 
     list.insertAdjacentHTML('beforeend', res.join(''));
+
+    lazyLoadInstance.update();
   } catch (e) {
     console.log(e);
   }

@@ -2,6 +2,9 @@ import { getPopularProducts } from '../api';
 import sprite from '../../images/sprite.svg';
 import { buyItem } from './buy-product';
 import { getItem } from '../storage';
+import LazyLoad from 'vanilla-lazyload';
+
+const lazyLoadInstance = new LazyLoad();
 
 const list = document.querySelector('.popular-product-list');
 
@@ -21,10 +24,12 @@ const initPopularproducts = async () => {
   }" data-price="${element.price}">
       <div class="product-image-container">
         <img
+          class="lazy"
           src="${element.img}"
-          alt="#"
+          alt="${element.name}"
           width="56"
           height="56"
+          loading="lazy"
         />
       </div>
       <div class="product-description">
@@ -75,6 +80,8 @@ const initPopularproducts = async () => {
     );
 
     list.insertAdjacentHTML('beforeend', res.join(''));
+
+    lazyLoadInstance.update();
   } catch (e) {
     console.log(e);
   }
