@@ -22,7 +22,9 @@ export const cards = async (page = 1) => {
     const res = results.map(
       el =>
         `
-  <li class="cart" data-id="${el._id}" data-price="${el.price}"">
+  <li class="cart js-product-item" data-id="${el._id}" data-price="${
+          el.price
+        }"">
   <div class="cart-container">
   <div class="cart-img-container">
     <img src="${el.img}" alt="" class="cart-img">
@@ -51,7 +53,7 @@ export const cards = async (page = 1) => {
     
       ${
         bucket.some(item => item.id === el._id)
-          ? `<button class="check" type="button" disabled>
+          ? `<button class="check js-bought-btn" type="button" disabled>
             <svg class="buy-svg" width="18" height="18">
               <use
                 class="check-svg"
@@ -68,7 +70,7 @@ export const cards = async (page = 1) => {
             </svg>
           </button>`
       }
-      <button class="check hidden" type="button">
+      <button class="check js-bought-btn hidden" type="button">
             <svg class="buy-svg " width="18" height="18">
               <use
                 class="buy-btn"
@@ -91,9 +93,16 @@ export const cards = async (page = 1) => {
 
 cards();
 
-list.addEventListener('click', e =>
-  buyItem(e.target, 'buy-btn', '.cart', '.buy', '.buy-info')
-);
+list.addEventListener('click', e => {
+  if (
+    !e.target.closest('button') ||
+    !e.target.closest('button').classList.contains('js-buy-button')
+  ) {
+    return;
+  }
+
+  buyItem(e.target.closest('li.js-product-item').dataset.id);
+});
 
 export function calculateLimit() {
   const width = window.innerWidth;

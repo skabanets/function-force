@@ -5,7 +5,9 @@ export function getMarkup(product) {
   const bucket = getItem('bucket');
 
   return ` 
-    <div class="modal-window" data-id="${product._id}" data-price="${product.price}">
+    <div class="modal-window js-product-item" data-id="${
+      product._id
+    }" data-price="${product.price}">
       <button type="button" class="modal-close-btn popup-modal-close">
       <svg class="modal-close-icon">
         <use href="${sprite}#close"></use>
@@ -47,26 +49,26 @@ export function getMarkup(product) {
         bucket.some(item => item.id === product._id)
           ? `      <button
         type="button"
-        class="added-to"
+        class="added-to js-bought-btn"
         data-modal-added-to
       >
-        Added to<svg class="modal-shopping-cart" width="18" height="18">
-          <use href="${sprite}#icon-shopping-cart"></use>
+        Added <svg class="modal-shopping-cart" width="18" height="18">
+          <use href="${sprite}#icon-check"></use>
         </svg>
       </button>`
-          : `<button type="button" class="add-to js-buy-btn" data-modal-add-to>
-        Add to<svg class="modal-shopping-cart js-buy-btn" width="18" height="18">
+          : `<button type="button" class="add-to js-buy-button" data-modal-add-to>
+        Add to<svg class="modal-shopping-cart js-buy-button" width="18" height="18">
           <use href="${sprite}#icon-shopping-cart"></use>
         </svg>
       </button>`
       }
             <button
         type="button"
-        class="added-to hidden"
+        class="added-to js-bought-btn hidden"
         data-modal-added-to
       >
-        Added to<svg class="modal-shopping-cart" width="18" height="18">
-          <use href="${sprite}#icon-shopping-cart"></use>
+        Added <svg class="modal-shopping-cart" width="18" height="18">
+          <use href="${sprite}#icon-check"></use>
         </svg>
       </button>
     </div>

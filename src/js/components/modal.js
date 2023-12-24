@@ -28,15 +28,16 @@ async function toggleModal(event) {
       modalBackdrop.insertAdjacentHTML(`beforeend`, markup);
       const modalPattern = document.querySelector('.modal-window');
 
-      modalPattern.addEventListener('click', e =>
-        buyItem(
-          e.target,
-          'js-buy-btn',
-          '.modal-window',
-          '.add-to',
-          '.modal-box-bottom'
-        )
-      );
+      modalPattern.addEventListener('click', e => {
+        if (
+          !e.target.closest('button') ||
+          !e.target.closest('button').classList.contains('js-buy-button')
+        ) {
+          return;
+        }
+
+        buyItem(e.target.closest('.js-product-item').dataset.id);
+      });
 
       const closeModalBtn = document.querySelector('.popup-modal-close');
 

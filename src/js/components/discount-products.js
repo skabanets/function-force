@@ -13,7 +13,9 @@ async function renderDiscountProducts() {
       .slice(0, 2)
       .map(
         element => `
-          <li class="discount-item" data-id="${element._id}" data-price="${element.price}"">
+          <li class="discount-item js-product-item" data-id="${
+            element._id
+          }" data-price="${element.price}"">
             <svg class="discount-icon" width="60" height="60">
               <use href="${sprite}#icon-discount"></use>
             </svg>
@@ -30,7 +32,7 @@ async function renderDiscountProducts() {
               <div class="btn-wrapper-discount">
               ${
                 bucket.some(item => item.id === element._id)
-                  ? `<button class="check-discount" type="button" disabled>
+                  ? `<button class="check-discount js-bought-btn" type="button" disabled>
             <svg class="buy-svg-discount" width="18" height="18">
               <use
                 class="check-svg-discount"
@@ -47,7 +49,7 @@ async function renderDiscountProducts() {
             </svg>
           </button>`
               }
-      <button class="check-discount hidden" type="button">
+      <button class="check-discount js-bought-btn hidden" type="button">
             <svg class="buy-svg-discount" width="18" height="18">
               <use
                 class="btn-js"
@@ -69,12 +71,12 @@ async function renderDiscountProducts() {
 renderDiscountProducts();
 
 discountList.addEventListener('click', e => {
-  console.log(e.target);
-  buyItem(
-    e.target,
-    'btn-js',
-    '.discount-item',
-    '.discount-product-button',
-    '.btn-wrapper-discount'
-  );
+  if (
+    !e.target.closest('button') ||
+    !e.target.closest('button').classList.contains('js-buy-button')
+  ) {
+    return;
+  }
+
+  buyItem(e.target.closest('li.js-product-item').dataset.id);
 });
