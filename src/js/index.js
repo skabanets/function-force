@@ -6,6 +6,7 @@ import './components/pagination';
 import './components/popular-products';
 import './components/discount-products';
 import './components/modal';
-import './components/footer'
-import './components/success-susubscribing-modal'
-import './components/error-subscribing-modal'
+import './components/footer';
+import './components/success-susubscribing-modal';
+import './components/error-subscribing-modal';
+import './components/scroll-up-btn';

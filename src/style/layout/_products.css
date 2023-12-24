@@ -87,3 +87,7 @@
     width: 100%;
   }
 }
+
+.product-card {
+  cursor: pointer;
+}
