@@ -14,15 +14,18 @@ export const cards = async (page = 1) => {
       '<li class="list-loader"><span class="loader"></span></li>';
     const data = getItem('pageData');
     const { results, totalPages } = await getProducts({
-      ...data,
+      category: data.category ? data.category : '',
+      ...data.sortBy,
+      keyword: data.keyword ? data.keyword : '',
       page: page,
       limit: calculateLimit(),
     });
 
 
-    if(page === 1) displayPagination(totalPages);
+    if(page === 1) await displayPagination(totalPages);
 
     if (results.length < 1) {
+      // тут над спитати що не так не встигає сообщеніє пустого стора зарендеритись
       const message = document.querySelector('.empty-storage');
       message.style.display = 'block';
       list.innerHTML = '';

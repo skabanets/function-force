@@ -30,9 +30,19 @@ list.insertAdjacentHTML(
 const onClick = target => {
   if (!target.classList.contains('menu-sort-item')) return;
   const val = JSON.parse(target.dataset.value);
+  const text = target.textContent
   const data = getItem('pageData');
+  const sort = document.querySelector('.js-sort-selected');
   if (val.all) setItem('pageData', {});
-  else setItem('pageData', { ...data, ...val });
+  else {
+    setItem('pageData', {
+      ...data,
+      sortBy: {
+        ...val,
+      },
+    });
+    sort.textContent = text
+  }
   cards();
 };
 
