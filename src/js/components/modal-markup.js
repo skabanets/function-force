@@ -27,7 +27,9 @@ export function getMarkup(product) {
         <h2 class="modal-title">${product.name}</h2>
         <div class="modal-box-info">
           <p class="classification">
-            Category:<span class="modal-info">${product.category}</span>
+            Category:<span class="modal-info">${product.category
+              .split('_')
+              .join(' ')}</span>
           </p>
           <p class="classification">
             Size:<span class="modal-info">${product.size}</span>

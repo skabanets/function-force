@@ -35,7 +35,9 @@ const initPopularproducts = async () => {
       <div class="product-description">
         <p class="product-name">${element.name}</p>
           <p class="info-item">
-            Category:<span class="info-text">${element.category}</span>
+            Category:<span class="info-text">${element.category
+              .split('_')
+              .join(' ')}</span>
           </p>
           <div class="product-info">
           <p class="info-item">Size:<span class="info-text">${

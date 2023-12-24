@@ -63,9 +63,9 @@ export const cards = async (page = 1) => {
   </div>
     <p class="cart-name">${el.name}</p>
     <ul class="info">
-      <li class="info-item">Category: <span class="info-text">${
-        el.category
-      }</span></li>
+      <li class="info-item">Category: <span class="info-text">${el.category
+        .split('_')
+        .join(' ')}</span></li>
       <li class="info-item">Size: <span class="info-text">${el.size}</span></li>
       <li class="info-item">Popularity: <span class="info-text">${
         el.popularity
