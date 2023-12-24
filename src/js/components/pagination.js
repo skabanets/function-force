@@ -6,7 +6,6 @@ const mobileDisp = () => {
 };
 
 export const displayPagination = async totalPages => {
-  console.log(totalPages);
   const pgContainer = document.querySelector('.pagination-container');
 
   if (totalPages < 2) {

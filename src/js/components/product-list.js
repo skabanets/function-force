@@ -25,9 +25,6 @@ export const cards = async (page = 1) => {
       message.style.display = 'block';
       list.innerHTML = '';
       list.appendChild(message);
-
-      console.log(message);
-
       return;
     }
 

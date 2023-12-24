@@ -12,12 +12,6 @@ dropdown.forEach(item => {
 
 function closeDropdowns(event) {
   const menu = document.querySelector('.menu-open');
-  console.log(menu);
-  // if (event.target !== event.target.closest(`.dropdown-filter`)) {
-  //   menu?.classList.toggle('menu-open');
-  //   document.removeEventListener('click', closeDropdowns)
-  // }
-
   if (!event.target.closest('.dropdown-filter')) {
     menu?.classList.toggle('menu-open');
     document.removeEventListener('click', closeDropdowns);
