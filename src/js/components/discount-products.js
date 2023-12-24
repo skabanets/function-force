@@ -15,7 +15,7 @@ async function renderDiscountProducts() {
         element => `
           <li class="discount-item js-product-item" data-id="${
             element._id
-          }" data-price="${element.price}"">
+          }" data-price="${element.price}">
             <svg class="discount-icon" width="60" height="60">
               <use href="${sprite}#icon-discount"></use>
             </svg>

@@ -2,6 +2,7 @@ import productCardTemplate from './template';
 import * as localStorage from '../../storage';
 import * as foodAPI from '../../api';
 import { renderQuantityOrders } from '../basket-quantity-of-products';
+import { countTotalPrice } from './total-price';
 
 const refs = {
   container: document.querySelector('.checkout-products-list'),
@@ -53,6 +54,7 @@ const onItemRemoveBtnClick = event => {
   setTimeout(() => {
     event.target.closest('li').remove();
     renderQuantityOrders();
+    countTotalPrice();
 
     // If Shopping cart is empty, then show empty cart conteiner
     if (bucket.length === 0) {
@@ -108,13 +110,15 @@ const onChangeQtyBtnClick = event => {
       // Update UI
       qtyValue.innerHTML = qty;
 
-      return { id: product.id, amount: qty };
+      return { id: product.id, amount: qty, price: product.price };
     }
     return product;
   });
 
   // Update Local Storage
   localStorage.setItem('bucket', bucket);
+  // Update Total Price
+  countTotalPrice();
 };
 
 // Add event listener on click remove item button
@@ -155,6 +159,9 @@ const renderProductsList = async () => {
     // Generate Markup and update our container
     const markup = productsData.map(productCardTemplate).join('');
     refs.container.innerHTML = markup;
+
+    renderQuantityOrders();
+    countTotalPrice();
   } catch (error) {
     // TODO: process Errors
     console.log(error);

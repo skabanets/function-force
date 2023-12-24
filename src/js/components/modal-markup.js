@@ -41,7 +41,7 @@ export function getMarkup(product) {
     </div>
 
     <div class="modal-box-bottom">
-      <p class="modal-price">$${product.price}</p>
+      <p class="modal-price">&#36;${product.price}</p>
 
 
   

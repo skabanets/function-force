@@ -18,7 +18,7 @@ const initPopularproducts = async () => {
         `
   <li class="popular-product-item js-product-item" data-id="${
     element._id
-  }" data-price="${element.price}"">
+  }" data-price="${element.price}">
       <div class="product-image-container">
         <img
           src="${element.img}"
