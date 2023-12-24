@@ -7,7 +7,9 @@ const menuCategories = document.querySelector('.menu-categories-js');
 const getMarkup = arr => {
   return arr
     .map(arr => {
-      return `<li class='menu-filter-item' data-value='${arr}'>${arr}</li>`;
+      return `<li class='menu-filter-item' data-value='${arr}'>${arr
+        .split('_')
+        .join(' ')}</li>`;
     })
     .join('');
 };
@@ -37,7 +39,7 @@ const onClick = target => {
     sel.textContent = val;
     setItem('pageData', { ...data, category: '' });
   } else {
-    sel.textContent = val
+    sel.textContent = val;
     setItem('pageData', { ...data, category: val });
   }
 

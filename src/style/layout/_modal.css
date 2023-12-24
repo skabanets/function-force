@@ -160,8 +160,8 @@
   font-size: 14px;
   line-height: 1.28;
   max-width: 295px;
-  max-height: 160px;
-  overflow: scroll;
+  max-height: 120px;
+  overflow: auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -169,7 +169,7 @@
     font-size: 16px;
     line-height: 1.25;
     max-width: 256px;
-    max-height: 100%;
+    max-height: 120px;
   }
 }
 
