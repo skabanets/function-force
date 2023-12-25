@@ -1,0 +1,54 @@
+<div class="filters-conteiner">
+  <h3 class="filters-p">Filters:</h3>
+  <form
+    id="product_search_form"
+    class="form-search"
+    name="product_search_form"
+    method="get"
+    action="/ua/site_search"
+  >
+    <div class="search-filter">
+      <input
+        id="search_term"
+        class="form-search-text"
+        name="search_term"
+        autocomplete="off"
+        maxlength="1000"
+        type="text"
+        placeholder="Search for anything"
+      />
+      <button type="submit" class="filter-btn">
+        <svg class="form-search-btn-filter" width="20" height="20">
+          <use href="./images/sprite.svg#icon-search"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="dropdown-filter menu-filter-a categories-js">
+      <div class="select-filter">
+        <span class="selected js-categories-selected">Categories</span>
+      </div>
+      <div class="caret-filter">
+        <svg class="form-click-filter" width="20" height="20">
+          <use
+            href="./images/sprite.svg#icon-drop-down"
+          ></use>
+        </svg>
+      </div>
+      <ul class="menu-filter menu-categories-js">
+      </ul>
+    </div>
+    <div class="dropdown-filter menu-filter-b dropdown-filter-2">
+      <div class="select-filter">
+        <span class="selected js-sort-selected">A to Z</span>
+      </div>
+      <div class="caret-filter">
+        <svg class="form-click-filter" width="20" height="20">
+          <use
+            href="./images/sprite.svg#icon-drop-down"
+          ></use>
+        </svg>
+      </div>
+      <ul class="menu-filter js-menu-sort">
+    </div>
+  </form>
+</div>

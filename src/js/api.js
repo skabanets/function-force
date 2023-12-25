@@ -11,9 +11,8 @@ const foodAPI = axios.create({
 */
 // Get Products by params
 export const getProducts = async params => {
-  const { sort, ...configParams } = params;
   const response = await foodAPI.get('/products', {
-    params: { ...configParams, [sort.field]: sort.value },
+    params: {...params},
   });
 
   return response.data;
@@ -38,7 +37,6 @@ export const getDiscountedProducts = async () => {
 // Get Products' Categories
 export const getProductsCategories = async () => {
   const response = await foodAPI.get('/products/categories');
-
   return response.data;
 };
 
@@ -70,7 +68,7 @@ export const createOrder = async (email, products) => {
 */
 // Create a new subscription
 export const createSubscription = async email => {
-  const response = await foodAPI.post('/subscription', { params: { email } });
+  const response = await foodAPI.post('/subscription', { email });
 
   return response.data;
 };

@@ -81,17 +81,18 @@
           <h3 class="form-footer-title">
             Subscribe and learn about new products!
           </h3>
-          <form>
+          <form class="js-footer-form">
             <div class="footer-form">
               <input
-                class="footer-imput-form"
+                class="footer-imput-form js-email"
                 type="email"
                 name="user-email"
                 placeholder="Email"
                 required
-                pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
+                pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}"
               />
               <button
+                data-modal-open
                 type="submit"
                 class="footer-btn"
                 id="footer-button"

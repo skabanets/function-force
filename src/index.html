@@ -12,12 +12,13 @@
     <main>
       <include src="./partials/hero.html"></include>
 
-      <section class="products">
+      <section class="products-section container">
         <include src="./partials/filters.html"></include>
-        <div class="produts-container">
+        <div class="products-container">
           <div class="main-products">
             <include src="./partials/product-storage.html"></include>
             <include src="./partials/empty-storage.html"></include>
+            <include src="./partials/pagination.html"></include>
           </div>
           <div class="additional-products">
             <include src="./partials/popular-products.html"></include>
@@ -27,9 +28,9 @@
       </section>
 
       <section>
-        <include src="./partials/product-modal.html"></include>
-        <include src="./partials/order-success-modal.html"></include>
-        <include src="./partials/success-susubscribing-modal.html"></include>
+        <!-- <include src="./partials/product-modal.html"></include>
+        <include src="./partials/order-success-modal.html"></include> -->
+        <include src="./partials/success-subscribing-modal.html"></include>
         <include src="./partials/error-subscribing-modal.html"></include>
       </section>
     </main>
@@ -37,6 +38,8 @@
     <include src="./partials/footer.html"></include>
 
     <include src="./partials/modal.html"></include>
+    <include src="./partials/scroll-up-btn.html"></include>
+
     <script type="module" src="./js/index.js" defer></script>
   </body>
 </html>

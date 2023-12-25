@@ -1,7 +1,7 @@
 .empty-storage {
-  display: flex;
-  justify-content: center;
+  display: none;
   padding: 60px 0 100px 0;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -31,7 +31,7 @@
   }
 }
 
-.title-empty-storage-message {
+.empty-storage-message-title {
   font-size: 18px;
   font-weight: 500;
   line-height: 20px;
@@ -39,7 +39,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .title-empty-storage-message {
+  .empty-storage-message-title {
     font-size: 20px;
     line-height: 24px;
     width: 367px;

@@ -1,4 +1,4 @@
-.backdrops {
+.modal-backdrops {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,9 +10,9 @@
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal {
+.modal-window {
   width: 335px;
-  height: 535px;
+  height: auto;
   border-radius: 20px;
   background-color: #fafafa;
 
@@ -29,8 +29,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .modal {
-    height: 380px;
+  .modal-window {
     width: 600px;
     padding: 40px;
   }
@@ -63,30 +62,30 @@
   }
 }
 
-.close-icon {
+.modal-close-icon {
   width: 12.38px;
   height: 12.38px;
 }
 
 @media screen and (min-width: 768px) {
-  .close-icon {
+  .modal-close-icon {
     width: 15.75px;
     height: 15.75px;
   }
 }
 
-.main-content-box {
+.modal-main-content-box {
   margin-bottom: 40px;
 }
 
 @media screen and (min-width: 768px) {
-  .main-content-box {
+  .modal-main-content-box {
     display: flex;
     margin-bottom: 48px;
   }
 }
 
-.picture-box {
+.modal-picture-box-container {
   width: 295px;
   height: 212px;
   border-radius: 10px;
@@ -97,7 +96,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .picture-box {
+  .modal-picture-box-container {
     width: 240px;
     height: 212px;
     border-radius: 10px;
@@ -108,12 +107,13 @@
   }
 }
 
-.pic {
+.modal-pic {
   width: 160px;
   height: 160px;
+  display: block;
 }
 
-.title {
+.modal-title {
   color: #010101;
   font-size: 18px;
   font-weight: 500;
@@ -122,13 +122,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .title {
+  .modal-title {
     font-size: 20px;
     line-height: 1.2;
   }
 }
 
-.box-info {
+.modal-box-info {
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -136,7 +136,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .box-info {
+  .modal-box-info {
     margin-bottom: 24px;
   }
 }
@@ -148,33 +148,38 @@
   margin-right: 8px;
 }
 
-.info {
+.modal-info {
   color: #010101;
   font-size: 12px;
   line-height: 1.17;
   margin-left: 4px;
 }
 
-.description {
+.modal-description {
   color: rgba(1, 1, 1, 0.7);
   font-size: 14px;
   line-height: 1.28;
+  max-width: 295px;
+  max-height: 120px;
+  overflow: auto;
 }
 
 @media screen and (min-width: 768px) {
-  .description {
+  .modal-description {
     font-size: 16px;
     line-height: 1.25;
+    max-width: 256px;
+    max-height: 120px;
   }
 }
 
-.box-bottom {
+.modal-box-bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.price {
+.modal-price {
   color: #010101;
   font-size: 18px;
   font-weight: 500;
@@ -182,7 +187,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .price {
+  .modal-price {
     font-size: 20px;
     line-height: 1.2;
   }
@@ -216,7 +221,8 @@
   }
 }
 
-.add-to:active {
+.add-to:active,
+.add-to:hover {
   background-color: #586f1f;
   border: none;
 }
@@ -226,4 +232,47 @@
     background-color: #586f1f;
     border: none;
   }
+}
+
+.added-to {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 30px;
+  background: #586f1f;
+
+  color: #e8e8e2;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  display: inline-flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .added-to {
+    padding: 10px 28px;
+    line-height: 1.25;
+  }
+}
+
+/* hidden */
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.modal-shopping-cart {
+  fill: #e8e8e2;
 }
