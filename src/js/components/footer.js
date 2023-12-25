@@ -5,7 +5,10 @@ const modal = document.querySelector('[data-modal]');
 const failure = document.querySelector('[data-popup-email]');
 
 const closModal = (target, class1, class2) => {
-  if (target.classList.contains(class1)) target.classList.toggle(class2);
+  if (target.classList.contains(class1)) {
+    target.classList.toggle(class2);
+    document.body.classList.toggle('scroll-hiden');
+  }
 };
 
 const onSubmit = async e => {
@@ -16,9 +19,11 @@ const onSubmit = async e => {
     form.reset();
 
     modal.classList.toggle('is-hidden-success');
+    document.body.classList.toggle('scroll-hiden');
   } catch (e) {
     const failure = document.querySelector('[data-popup-email]');
     failure.classList.toggle('is-hidden');
+    document.body.classList.toggle('scroll-hiden');
   }
 };
 

@@ -46,10 +46,11 @@ async function toggleModal(event) {
 
       refs.modal.addEventListener('click', handleModalClick);
       closeModalBtn.addEventListener('click', toggleModal);
-
       window.addEventListener('keydown', handleEscKeyPress);
+      document.body.classList.toggle('scroll-hiden');
     } else {
       refs.modal.innerHTML = '';
+      document.body.classList.toggle('scroll-hiden');
       // Знімаємо прослуховувач клавіші 'Esc' після закриття вікна
       window.removeEventListener('keydown', handleEscKeyPress);
     }
