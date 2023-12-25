@@ -22,9 +22,9 @@ const productCardTemplate = product => {
                 <h3 class="product-item-name">${product.name}</h3>
                 <p class="product-item-category">
                   <span class="product-item-catogry-label">Category: </span>
-                  <span class="product-item-category-name">${
-                    product.category
-                  }</span>
+                  <span class="product-item-category-name">${product.category
+                    .split('_')
+                    .join(' ')}</span>
                 </p>
                 <p class="product-item-size">
                   <span class="product-item-size-label">Size: </span

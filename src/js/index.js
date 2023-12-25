@@ -9,6 +9,6 @@ import './components/popular-products';
 import './components/discount-products';
 import './components/footer';
 import './components/product-modal';
-import './components/success-susubscribing-modal';
+import './components/success-subscribing-modal';
 import './components/error-subscribing-modal';
 import './components/scroll-up-btn';
