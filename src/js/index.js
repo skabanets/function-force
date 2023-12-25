@@ -1,14 +1,14 @@
 import './components/basket-quantity-of-products';
 import './components/filters';
 import './components/categories-products';
+import './components/sorting-products';
+import './components/search';
 import './components/product-list';
 import './components/pagination';
 import './components/popular-products';
 import './components/discount-products';
-import './components/modal';
 import './components/footer';
+import './components/product-modal';
 import './components/success-susubscribing-modal';
 import './components/error-subscribing-modal';
 import './components/scroll-up-btn';
-import './components/sorting-products'
-import './components/search'

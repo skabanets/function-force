@@ -27,7 +27,7 @@
 .discount-item {
   list-style: none;
   border-radius: 15px;
-  background-color: #fafafa;
+  background-color: var(--lite-color);
   position: relative;
   padding-top: 16px;
   padding-left: 16px;
@@ -60,7 +60,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background-color: #e8e8e2;
+  background-color: var(--primary-cl);
 }
 
 .discount-img {
@@ -117,18 +117,19 @@
   height: 34px;
   width: 34px;
   border-radius: 30px;
-  background-color: #6d8434;
+  background-color: var(--lite-green);
   border: none;
   padding: 8px;
+  transition: background-color var(--trans);
 }
 
 .discount-product-button:hover,
 .discount-product-button:focus {
-  background-color: #586f1f;
+  background-color: var(--dark-green);
 }
 
 .icon-discount-btn {
-  fill: #ffffff;
+  fill: var(--primary-cl);
 }
 /* ////\\\\ */
 .check-discount {
@@ -146,7 +147,4 @@
 .buy-svg-discount,
 .check-svg-discount {
   fill: var(--primary-cl);
-}
-
-.btn-wrapper-discount {
 }
