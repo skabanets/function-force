@@ -1,0 +1,72 @@
+.modal-order-success {
+  width: 560px;
+  height: 509px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: white;
+  margin-left: 200px;
+  padding: 80px 40px;
+  position: relative;
+  /* background: #E8E8E2; */
+}
+
+.order-success-button {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #e8e8e2;
+  position: absolute;
+ top: 24px;
+   right: 24px;
+  
+}
+.img-text-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tomato-elips{
+position: relative;
+margin-bottom: 37px;
+}
+
+.order-success-img {
+  width: 140px;
+  height: 140px;
+}
+
+.svg-elips {
+/* filter: blur(10px); */
+  fill: var(--dark-cl-10);
+  position: absolute;
+  bottom: -10px;
+}
+
+.order-success-h {
+  color: #010101;
+  font-family: Neue Montreal;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.order-success-text {
+  color: var(--dark-cl-70);
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+
+
+
