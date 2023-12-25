@@ -1,5 +1,5 @@
 .is-hidden-success {
- opacity: 0;
+  opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
@@ -21,7 +21,7 @@
 .modal-success {
   width: 335px;
   height: 400px;
-  background-color: #e8e8e2;
+  background-color: var(--primary-cl);
   border-radius: 19px;
 
   position: absolute;
@@ -47,7 +47,7 @@
   width: 22px;
   height: 22px;
   border: none;
-  background-color: #e8e8e2;
+  background-color: var(--primary-cl);
   position: absolute;
   top: 14px;
   right: 14px;
@@ -91,7 +91,7 @@
 }
 
 .thanks-text {
-  color: #010101;
+  color: var(--dark-cl);
   font-size: 20px;
   font-family: Neue Montreal;
   font-weight: 500;
@@ -110,7 +110,7 @@
 }
 
 .style-span-success {
-  color: #6d8434;
+  color: var(--lite-green);
   font-size: 20px;
   font-family: Neue Montreal;
   font-weight: 500;
@@ -125,7 +125,7 @@
 }
 
 .promise-text {
-  color: rgba(1, 1, 1, 0.7);
+  color: var(--dark-cl-70);
   font-size: 14px;
   font-family: Neue Montreal;
   font-weight: 400;

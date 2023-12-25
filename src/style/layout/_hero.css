@@ -1,8 +1,7 @@
 /* ///Style title\\\ */
 .style-title-hero {
-  color: #010101;
+  color: var(--dark-cl);
   font-size: 44px;
-  font-family: Neue Montreal;
   font-weight: 500;
   line-height: 48px;
   word-wrap: break-word;
@@ -17,9 +16,8 @@
 }
 
 .style-span-hero {
-  color: #6d8434;
+  color: var(--lite-green);
   font-size: 44px;
-  font-family: Neue Montreal;
   font-weight: 500;
   line-height: 48px;
   word-wrap: break-word;
@@ -37,7 +35,6 @@
 .text-hero {
   color: rgba(1, 1, 1, 0.8);
   font-size: 14px;
-  font-family: Neue Montreal;
   font-weight: 400;
   line-height: 18px;
   word-wrap: break-word;
@@ -52,7 +49,8 @@
     width: 492px;
   }
 }
-/* ///Style box for hero\\\ */
+
+/* Style box for hero */
 .hero-box {
   display: flex;
   align-items: center;
@@ -69,7 +67,7 @@
   }
 }
 
-/* ///Hero image mobile\\\ */
+/* Hero image mobile */
 .hero-image {
   position: relative;
   width: 100%;
@@ -104,7 +102,7 @@
   }
 }
 
-/* ///Hero image desktop\\\ */
+/* Hero image desktop */
 @media only screen and (min-width: 1440px) {
   .hero-image {
     height: 350px;
@@ -118,7 +116,8 @@
     background-image: url('../../images/hero-image/webp-folder/hero-desktop_2x.webp');
   }
 }
-/* ///Svg on hero image\\\ */
+
+/* Svg on hero image */
 .svg-organic {
   position: absolute;
   top: -7px;

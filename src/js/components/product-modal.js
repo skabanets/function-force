@@ -1,6 +1,6 @@
 import { getProductById } from '../api';
 import { buyItem } from './buy-product';
-import { getMarkup } from './modal-markup';
+import { getMarkup } from './product-modal-markup';
 
 const refs = {
   popular: document.querySelector('.popular-product-list'),
