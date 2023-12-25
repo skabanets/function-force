@@ -2,7 +2,7 @@ import { cards } from './product-list';
 
 const mobileDisp = () => {
   const width = window.innerWidth;
-  return width < 376 ? true : false;
+  return width < 768 ? true : false;
 };
 
 export const displayPagination = async totalPages => {
