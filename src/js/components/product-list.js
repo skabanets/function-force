@@ -7,12 +7,14 @@ import LazyLoad from 'vanilla-lazyload';
 
 const lazyLoadInstance = new LazyLoad();
 const list = document.querySelector('.js-cart-list');
+const message = document.querySelector('.empty-storage');
 
 export const cards = async (page = 1) => {
   try {
     list.innerHTML =
       '<li class="list-loader"><span class="loader"></span></li>';
     const data = getItem('pageData');
+    
     const { results, totalPages } = await getProducts({
       category: data.category ? data.category : '',
       ...data.sortBy,
@@ -26,7 +28,6 @@ export const cards = async (page = 1) => {
 
     if (results.length < 1) {
       // тут над спитати що не так не встигає сообщеніє пустого стора зарендеритись
-      const message = document.querySelector('.empty-storage');
       message.style.display = 'block';
       list.innerHTML = '';
       list.appendChild(message);
