@@ -36,10 +36,10 @@ const onClick = target => {
   const val = target.dataset.value;
   const data = getItem('pageData');
   if (val === 'ShowAll') {
-    sel.textContent = val;
+    sel.textContent = val.split('_').join(' ');
     setItem('pageData', { ...data, category: '' });
   } else {
-    sel.textContent = val;
+    sel.textContent = val.split('_').join(' ');
     setItem('pageData', { ...data, category: val });
   }
 
