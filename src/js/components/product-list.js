@@ -14,7 +14,7 @@ export const cards = async (page = 1) => {
     list.innerHTML =
       '<li class="list-loader"><span class="loader"></span></li>';
     const data = getItem('pageData');
-    
+
     const { results, totalPages } = await getProducts({
       category: data.category ? data.category : '',
       ...data.sortBy,
@@ -23,11 +23,9 @@ export const cards = async (page = 1) => {
       limit: calculateLimit(),
     });
 
-
-    if(page === 1) await displayPagination(totalPages);
+    if (page === 1) await displayPagination(totalPages);
 
     if (results.length < 1) {
-      // тут над спитати що не так не встигає сообщеніє пустого стора зарендеритись
       message.style.display = 'block';
       list.innerHTML = '';
       list.appendChild(message);

@@ -14,10 +14,10 @@ const closModal = (target, class1, class2) => {
 const onSubmit = async e => {
   try {
     e.preventDefault();
+    window.addEventListener('keydown', handleEscKeyPress);
     const email = document.querySelector('.js-email').value;
     await createSubscription(email);
     form.reset();
-
     modal.classList.toggle('is-hidden-success');
     document.body.classList.toggle('scroll-hiden');
   } catch (e) {
@@ -26,6 +26,14 @@ const onSubmit = async e => {
     document.body.classList.toggle('scroll-hiden');
   }
 };
+
+function handleEscKeyPress(event) {
+  if (event.code === 'Escape') {
+    failure.classList.add('is-hidden');
+    modal.classList.add('is-hidden-success');
+    window.removeEventListener('keydown', handleEscKeyPress);
+  }
+}
 
 failure.addEventListener('click', e =>
   closModal(e.target, 'popup-email-backdrops', 'is-hidden')
