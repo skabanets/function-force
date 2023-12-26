@@ -14,7 +14,7 @@
 /* Tablet */
 @media only screen and (min-width: 768px) {
   .shopping-cart-container {
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     padding-right: 16px;
   }
 }
@@ -22,6 +22,7 @@
 @media only screen and (min-width: 1440px) {
   .shopping-cart-container {
     padding-right: 16px;
+    padding-bottom: 98px;
   }
 }
 
@@ -33,18 +34,19 @@
 .shopping-cart-header-container {
   display: flex;
   align-items: center;
-  margin-bottom: 19px;
+  margin-bottom: 14px;
 }
 /* Tablet */
 @media only screen and (min-width: 768px) {
   .shopping-cart-header-container {
-    margin-bottom: 29px;
+    margin-bottom: 23px;
   }
 }
 /* Desktop */
 @media only screen and (min-width: 1440px) {
   .shopping-cart-header-container {
-    margin-bottom: 21px;
+    margin-top: 4px;
+    margin-bottom: 16px;
   }
 }
 .shopping-cart-header-icon,
@@ -135,14 +137,14 @@
 /* Desktop */
 @media only screen and (min-width: 1440px) {
   .shopping-cart-products-container {
-    width: 541px;
+    width: 549px;
     margin-bottom: 0;
   }
 }
 
 .products-container-actions {
   text-align: right;
-  margin-bottom: 33px;
+  margin-bottom: 30px;
 }
 /* Tablet */
 @media only screen and (min-width: 768px) {
@@ -155,7 +157,7 @@
 @media only screen and (min-width: 1440px) {
   .products-container-actions {
     padding-right: 49px;
-    margin-bottom: 46px;
+    margin-bottom: 42px;
   }
 }
 
@@ -471,11 +473,13 @@
 .shopping-cart-order-container {
   width: 100%;
   text-align: left;
+  padding-right: 12px;
 }
 /* Tablet */
 @media only screen and (min-width: 768px) {
   .shopping-cart-order-container {
     width: 590px;
+    padding-right: 0;
   }
 }
 /* Desktop */
@@ -501,8 +505,8 @@
 /* Tablet */
 @media only screen and (min-width: 768px) {
   .shopping-cart-order-total-container {
-    padding: 14px 28px;
-    margin-bottom: 40px;
+    margin-bottom: 39px;
+    padding: 13px 28px;
   }
 }
 
@@ -593,7 +597,8 @@
 @media only screen and (min-width: 768px) {
   .checkout-form-input {
     font-size: 18px;
-
+    font-weight: 400;
+    line-height: 24px;
     width: 359px;
     padding-top: 15px;
     padding-bottom: 15px;

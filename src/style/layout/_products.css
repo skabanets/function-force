@@ -3,22 +3,6 @@
 @import url('../layout/_popular-products.css');
 @import url('../layout/_discount-products.css');
 
-.products-section {
-  padding-bottom: 80px;
-}
-
-@media screen and (min-width: 768px) {
-  .products-section {
-    padding-bottom: 100px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .products-section {
-    padding-bottom: 61px;
-  }
-}
-
 .products-container {
   display: flex;
   flex-direction: column;
@@ -52,11 +36,15 @@
   display: flex;
   flex-direction: column;
   gap: 80px;
+  margin-bottom: 80px;
+  margin-top: 2px;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .additional-products {
     gap: 64px;
+    margin-bottom: 100px;
+    margin-top: 0;
   }
 }
 
@@ -66,6 +54,7 @@
     height: 100%;
     display: flex;
     gap: 40px;
+    margin-bottom: 140px;
   }
 }
 
