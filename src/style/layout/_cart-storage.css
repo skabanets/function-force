@@ -6,6 +6,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  display: none;
 }
 .shopping-cart-section.is-hidden-height-0 {
   padding: 0;
