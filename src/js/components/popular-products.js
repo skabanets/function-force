@@ -3,6 +3,7 @@ import sprite from '../../images/sprite.svg';
 import { buyItem } from './buy-product';
 import { getItem } from '../storage';
 import LazyLoad from 'vanilla-lazyload';
+import { Notify } from 'notiflix';
 
 const lazyLoadInstance = new LazyLoad();
 
@@ -85,7 +86,7 @@ const initPopularproducts = async () => {
 
     lazyLoadInstance.update();
   } catch (e) {
-    console.log(e);
+    return Notify.failure(error.message);
   }
 };
 

@@ -4,6 +4,7 @@ import { buyItem } from './buy-product';
 import sprite from '../../images/sprite.svg';
 import { displayPagination } from './pagination';
 import LazyLoad from 'vanilla-lazyload';
+import { Notify } from 'notiflix';
 
 const lazyLoadInstance = new LazyLoad();
 const list = document.querySelector('.js-cart-list');
@@ -111,7 +112,7 @@ export const cards = async (page = 1) => {
 
     lazyLoadInstance.update();
   } catch (e) {
-    console.log(e);
+    return Notify.failure(error.message);
   }
 };
 
