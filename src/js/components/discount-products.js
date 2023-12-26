@@ -28,6 +28,7 @@ async function renderDiscountProducts() {
                 alt="${element.name}"
                 class="lazy discount-img"
                 loading="lazy"
+                width="114"
               />
             </div>
             <div class="discount-order">
@@ -44,7 +45,7 @@ async function renderDiscountProducts() {
               ></use>
             </svg>
           </button>`
-                  : `<button class="discount-product-button btn-js js-buy-button" type="button">
+                  : `<button class="discount-product-button btn-js js-buy-button" type="button" aria-label="Add to the shopping cart">
             <svg class="icon-discount-btn btn-js" width="18" height="18">
               <use
                 class="btn-js"

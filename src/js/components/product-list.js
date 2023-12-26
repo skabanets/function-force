@@ -84,7 +84,7 @@ export const cards = async (page = 1) => {
               ></use>
             </svg>
           </button>`
-          : `<button class="buy buy-btn js-buy-button" type="button">
+          : `<button class="buy buy-btn js-buy-button" type="button" aria-label="Add to the shopping cart">
             <svg class="buy-svg buy-btn" width="18" height="18">
               <use
                 class="buy-btn"
