@@ -7,6 +7,8 @@ const refs = {
   products: document.querySelector('.js-cart-list'),
   discount: document.querySelector('.js-discount-list'),
   modal: document.querySelector('.modal-backdrops'),
+  modalContent: document.querySelector('.modal-backdrop-containter'),
+  cardLoaderContainer: document.querySelector('.card-loader-container'),
 };
 
 refs.popular.addEventListener('click', toggleModal);
@@ -24,12 +26,14 @@ async function toggleModal(event) {
       return;
     refs.modal.classList.toggle('is-hidden');
     if (!refs.modal.classList.contains('is-hidden')) {
+      refs.cardLoaderContainer.classList.toggle('is-hidden');
+
       const productID = event.target.closest('li').dataset.id;
       const product = await getProductById(productID);
       const markup = getMarkup(product);
-      const modalBackdrop = document.querySelector('.modal-backdrops');
 
-      modalBackdrop.insertAdjacentHTML(`beforeend`, markup);
+      refs.modalContent.insertAdjacentHTML('beforeend', markup);
+      refs.cardLoaderContainer.classList.toggle('is-hidden');
       const modalPattern = document.querySelector('.modal-window');
 
       modalPattern.addEventListener('click', e => {
@@ -50,7 +54,7 @@ async function toggleModal(event) {
       window.addEventListener('keydown', handleEscKeyPress);
       document.body.classList.toggle('scroll-hiden');
     } else {
-      refs.modal.innerHTML = '';
+      refs.modalContent.innerHTML = '';
       document.body.classList.toggle('scroll-hiden');
       // Знімаємо прослуховувач клавіші 'Esc' після закриття вікна
       window.removeEventListener('keydown', handleEscKeyPress);
