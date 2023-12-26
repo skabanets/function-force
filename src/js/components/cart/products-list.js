@@ -4,15 +4,21 @@ import * as foodAPI from '../../api';
 import { renderQuantityOrders } from '../basket-quantity-of-products';
 import { countTotalPrice } from './total-price';
 import LazyLoad from 'vanilla-lazyload';
-
-const lazyLoadInstance = new LazyLoad();
+import Scrollbar from 'smooth-scrollbar';
 
 const refs = {
-  container: document.querySelector('.checkout-products-list'),
+  container: document.querySelector('.checkout-products-list-container'),
+  productsList: document.querySelector('.checkout-products-list'),
   deleteAllProductsBtn: document.querySelector('.delete-all-products-btn'),
   emptyCartSection: document.querySelector('.empty-cart-section'),
   shoppingCartSection: document.querySelector('.shopping-cart-section'),
 };
+const lazyLoadInstance = new LazyLoad();
+const scrollbar = Scrollbar.init(refs.container, {
+  alwaysShowTracks: true,
+  thumbMaxSize: 190,
+  thumbMinSize: 190,
+});
 
 /**
   |============================
@@ -26,6 +32,17 @@ const showEmptyCartContainer = () => {
 const showCartContainer = () => {
   refs.shoppingCartSection.classList.remove('hidden');
   refs.emptyCartSection.classList.add('hidden');
+};
+const updateScrollBarVisibility = () => {
+  if (
+    refs.productsList.querySelectorAll('li.checkout-products-list-item.show')
+      .length <= 3
+  ) {
+    scrollbar.options.alwaysShowTracks = false;
+  } else {
+    scrollbar.options.alwaysShowTracks = true;
+  }
+  scrollbar.update();
 };
 
 /**
@@ -52,10 +69,11 @@ const onItemRemoveBtnClick = event => {
   const bucket = productsInCart.filter(item => item.id !== productId);
   localStorage.setItem('bucket', bucket);
 
-  // Remove element from a list
-  event.target.closest('li').classList.add('hide-list-item');
-  setTimeout(() => {
+  event.target.closest('li').classList.remove('show');
+  event.target.closest('li').ontransitionend = function () {
     event.target.closest('li').remove();
+
+    updateScrollBarVisibility();
     renderQuantityOrders();
     countTotalPrice();
 
@@ -63,7 +81,7 @@ const onItemRemoveBtnClick = event => {
     if (bucket.length === 0) {
       showEmptyCartContainer();
     }
-  }, 1000);
+  };
 };
 
 // REMOVE ALL PRODUCTS
@@ -72,8 +90,8 @@ const onRemoveAllBtnClick = event => {
   localStorage.setItem('bucket', []);
 
   // Remove items from a list
-  for (const item of refs.container.children) {
-    item.classList.add('hide-list-item');
+  for (const item of refs.productsList.children) {
+    item.classList.remove('show');
   }
 
   renderQuantityOrders();
@@ -125,8 +143,8 @@ const onChangeQtyBtnClick = event => {
 };
 
 // Add event listener on click remove item button
-refs.container.addEventListener('click', onItemRemoveBtnClick);
-refs.container.addEventListener('click', onChangeQtyBtnClick); // TODO: use ONLY one event listener
+refs.productsList.addEventListener('click', onItemRemoveBtnClick);
+refs.productsList.addEventListener('click', onChangeQtyBtnClick); // TODO: use ONLY one event listener
 refs.deleteAllProductsBtn.addEventListener('click', onRemoveAllBtnClick);
 
 /**
@@ -161,8 +179,9 @@ const renderProductsList = async () => {
 
     // Generate Markup and update our container
     const markup = productsData.map(productCardTemplate).join('');
-    refs.container.innerHTML = markup;
+    refs.productsList.innerHTML = markup;
 
+    updateScrollBarVisibility();
     lazyLoadInstance.update();
     renderQuantityOrders();
     countTotalPrice();

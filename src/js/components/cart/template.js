@@ -5,7 +5,7 @@ import * as localStorage from '../../storage';
 const productsInCart = localStorage.getItem('bucket');
 
 const productCardTemplate = product => {
-  return `<li class="checkout-products-list-item" data-id="${product._id}">
+  return `<li class="checkout-products-list-item show" data-id="${product._id}">
           <div class="checkout-product-item-card">
             <div class="checkout-product-item-card-img">
               <img
