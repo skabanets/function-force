@@ -21,16 +21,13 @@ list.insertAdjacentHTML(
           })}'>Popular</li>
           <li class="menu-sort-item" data-value='${JSON.stringify({
             byPopularity: true,
-          })}'>Not popular</li>
-          <li class="menu-sort-item" data-value='${JSON.stringify({
-            all: true,
-          })}'>Show all</li>`
+          })}'>Not popular</li>`
 );
 
 const onClick = target => {
   if (!target.classList.contains('menu-sort-item')) return;
   const val = JSON.parse(target.dataset.value);
-  const text = target.textContent
+  const text = target.textContent;
   const data = getItem('pageData');
   const sort = document.querySelector('.js-sort-selected');
   if (val.all) setItem('pageData', {});
@@ -41,7 +38,7 @@ const onClick = target => {
         ...val,
       },
     });
-    sort.textContent = text
+    sort.textContent = text;
   }
   cards();
 };
