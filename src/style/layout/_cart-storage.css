@@ -1,6 +1,15 @@
 .hidden {
   display: none;
 }
+.is-hidden-height-0 {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.shopping-cart-section.is-hidden-height-0 {
+  padding: 0;
+}
 
 /**
   |============================

@@ -26,12 +26,12 @@ const scrollbar = Scrollbar.init(refs.container, {
   |============================
 */
 const showEmptyCartContainer = () => {
-  refs.shoppingCartSection.classList.add('hidden');
-  refs.emptyCartSection.classList.remove('hidden');
+  refs.shoppingCartSection.classList.add('is-hidden-height-0');
+  refs.emptyCartSection.classList.remove('is-hidden-height-0');
 };
 const showCartContainer = () => {
-  refs.shoppingCartSection.classList.remove('hidden');
-  refs.emptyCartSection.classList.add('hidden');
+  refs.shoppingCartSection.classList.remove('is-hidden-height-0');
+  refs.emptyCartSection.classList.add('is-hidden-height-0');
 };
 const updateScrollBarVisibility = () => {
   if (
@@ -69,13 +69,13 @@ const onItemRemoveBtnClick = event => {
   const bucket = productsInCart.filter(item => item.id !== productId);
   localStorage.setItem('bucket', bucket);
 
+  updateScrollBarVisibility();
+  renderQuantityOrders();
+  countTotalPrice();
+
   event.target.closest('li').classList.remove('show');
   event.target.closest('li').ontransitionend = function () {
     event.target.closest('li').remove();
-
-    updateScrollBarVisibility();
-    renderQuantityOrders();
-    countTotalPrice();
 
     // If Shopping cart is empty, then show empty cart conteiner
     if (bucket.length === 0) {
@@ -89,12 +89,13 @@ const onRemoveAllBtnClick = event => {
   // Remove all items from bucket
   localStorage.setItem('bucket', []);
 
+  renderQuantityOrders();
+
   // Remove items from a list
   for (const item of refs.productsList.children) {
     item.classList.remove('show');
   }
 
-  renderQuantityOrders();
   // Show empty Cart container
   setTimeout(() => {
     showEmptyCartContainer();
