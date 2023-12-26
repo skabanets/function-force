@@ -1,6 +1,7 @@
 import { getProductById } from '../api';
 import { buyItem } from './buy-product';
 import { getMarkup } from './product-modal-markup';
+import { Notify } from 'notiflix';
 
 const refs = {
   popular: document.querySelector('.popular-product-list'),
@@ -60,7 +61,7 @@ async function toggleModal(event) {
       window.removeEventListener('keydown', handleEscKeyPress);
     }
   } catch (error) {
-    console.log(error);
+    return Notify.failure(error.message);
   }
 }
 

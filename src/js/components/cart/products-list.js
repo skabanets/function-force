@@ -5,6 +5,7 @@ import { renderQuantityOrders } from '../basket-quantity-of-products';
 import { countTotalPrice } from './total-price';
 import LazyLoad from 'vanilla-lazyload';
 import Scrollbar from 'smooth-scrollbar';
+import { Notify } from 'notiflix';
 
 const refs = {
   container: document.querySelector('.checkout-products-list-container'),
@@ -183,7 +184,7 @@ const onShoppingCartOrderSubmit = async event => {
     document.body.classList.toggle('scroll-hiden');
   } catch (error) {
     // TODO: process Errors
-    console.log(error);
+    return Notify.failure(error.message);
   }
 };
 
@@ -237,7 +238,7 @@ const renderProductsList = async () => {
     countTotalPrice();
   } catch (error) {
     // TODO: process Errors
-    console.log(error);
+    return Notify.failure(error.message);
   }
 };
 

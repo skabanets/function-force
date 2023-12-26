@@ -1,6 +1,7 @@
 import { getProductsCategories } from '../api';
 import { getItem, setItem } from '../storage';
 import { cards } from './product-list';
+import { Notify } from 'notiflix';
 
 const menuCategories = document.querySelector('.menu-categories-js');
 
@@ -25,7 +26,7 @@ async function renderCategoriesList() {
       '<li class="show-all-categories menu-filter-item" data-value="ShowAll">Show all</li>';
     menuCategories.innerHTML = markup;
   } catch (error) {
-    markup = '<li>Error! Try again</li>';
+    return Notify.failure(error.message);
   }
 }
 renderCategoriesList();

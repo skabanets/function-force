@@ -3,6 +3,7 @@ import { getDiscountedProducts } from '../api';
 import { buyItem } from './buy-product';
 import { getItem } from '../storage';
 import LazyLoad from 'vanilla-lazyload';
+import { Notify } from 'notiflix';
 
 const lazyLoadInstance = new LazyLoad();
 const bucket = getItem('bucket');
@@ -70,7 +71,7 @@ async function renderDiscountProducts() {
 
     lazyLoadInstance.update();
   } catch (error) {
-    console.error('Error rendering discount items:', error);
+    return Notify.failure(error.message);
   }
 }
 renderDiscountProducts();
