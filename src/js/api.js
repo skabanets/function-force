@@ -12,7 +12,7 @@ const foodAPI = axios.create({
 // Get Products by params
 export const getProducts = async params => {
   const response = await foodAPI.get('/products', {
-    params: {...params},
+    params: { ...params },
   });
 
   return response.data;
@@ -54,9 +54,7 @@ export const getProductById = async id => {
 */
 // Create a new order
 export const createOrder = async (email, products) => {
-  const response = await foodAPI.post('/orders', {
-    params: { email, products },
-  });
+  const response = await foodAPI.post('/orders', { email, products });
 
   return response.data;
 };

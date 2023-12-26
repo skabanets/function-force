@@ -12,6 +12,9 @@ const refs = {
   deleteAllProductsBtn: document.querySelector('.delete-all-products-btn'),
   emptyCartSection: document.querySelector('.empty-cart-section'),
   shoppingCartSection: document.querySelector('.shopping-cart-section'),
+  shoppingCartOrderForm: document.querySelector('.shopping-cart-order-form'),
+  checkoutSuccessModal: document.querySelector('#checkout-success-modal'),
+  modalCloseBtn: document.querySelector('.order-success-button'),
 };
 const lazyLoadInstance = new LazyLoad();
 const scrollbar = Scrollbar.init(refs.container, {
@@ -143,10 +146,70 @@ const onChangeQtyBtnClick = event => {
   countTotalPrice();
 };
 
+const onModalClose = event => {
+  refs.checkoutSuccessModal.classList.add('is-hidden-success');
+
+  // Update Local Storage
+  localStorage.setItem('bucket', []);
+
+  renderQuantityOrders();
+  showEmptyCartContainer();
+};
+
+const onModalCloseBtnClick = event => {
+  refs.checkoutSuccessModal.classList.add('is-hidden-success');
+
+  // Update Local Storage
+  localStorage.setItem('bucket', []);
+
+  renderQuantityOrders();
+  showEmptyCartContainer();
+};
+
+const handleEscKeyPress = event => {
+  if (event.code === 'Escape') {
+    // Update Local Storage
+    localStorage.setItem('bucket', []);
+
+    refs.checkoutSuccessModal.classList.add('is-hidden-success');
+    window.removeEventListener('keydown', handleEscKeyPress);
+
+    renderQuantityOrders();
+    showEmptyCartContainer();
+  }
+};
+
+const onShoppingCartOrderSubmit = async event => {
+  event.preventDefault();
+
+  const email = event.target.elements.email.value;
+  const productsInCart = localStorage
+    .getItem('bucket')
+    .map(product => ({ productId: product.id, amount: product.amount }));
+
+  try {
+    const order = await foodAPI.createOrder(email, productsInCart);
+    event.target.reset();
+    refs.checkoutSuccessModal.classList.remove('is-hidden-success');
+
+    window.addEventListener('keydown', handleEscKeyPress);
+    document.body.classList.toggle('scroll-hiden');
+  } catch (error) {
+    // TODO: process Errors
+    console.log(error);
+  }
+};
+
 // Add event listener on click remove item button
 refs.productsList.addEventListener('click', onItemRemoveBtnClick);
 refs.productsList.addEventListener('click', onChangeQtyBtnClick); // TODO: use ONLY one event listener
 refs.deleteAllProductsBtn.addEventListener('click', onRemoveAllBtnClick);
+refs.modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
+refs.checkoutSuccessModal.addEventListener('click', onModalClose);
+refs.shoppingCartOrderForm.addEventListener(
+  'submit',
+  onShoppingCartOrderSubmit
+);
 
 /**
   |============================
