@@ -16,6 +16,7 @@ refs.discount.addEventListener('click', toggleModal);
 async function toggleModal(event) {
   try {
     if (
+      event?.target.closest('ul')?.querySelector('.empty-storage') ||
       event?.target.closest('.js-buy-button') ||
       event?.target.nodeName === 'UL' ||
       event?.target.classList.contains('list-loader')

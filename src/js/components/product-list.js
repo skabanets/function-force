@@ -1,5 +1,5 @@
 import { getProducts } from '../api';
-import { getItem } from '../storage';
+import { getItem, setItem } from '../storage';
 import { buyItem } from './buy-product';
 import sprite from '../../images/sprite.svg';
 import { displayPagination } from './pagination';
@@ -126,6 +126,11 @@ list.addEventListener('click', e => {
   }
 
   buyItem(e.target.closest('li.js-product-item').dataset.id);
+});
+
+// Reset all Filters in case we reload the page or navigate to another page
+window.addEventListener('beforeunload', event => {
+  setItem('pageData', {});
 });
 
 export function calculateLimit() {
