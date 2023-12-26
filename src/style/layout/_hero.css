@@ -4,6 +4,7 @@
   font-size: 44px;
   font-weight: 500;
   line-height: 48px;
+  letter-spacing: -0.88px;
   word-wrap: break-word;
   text-align: center;
 }
@@ -12,6 +13,7 @@
   .style-title-hero {
     font-size: 80px;
     line-height: 80px;
+    letter-spacing: -1.6px;
   }
 }
 
@@ -28,6 +30,14 @@
   .style-span-hero {
     font-size: 80px;
     line-height: 80px;
+    letter-spacing: -1.6px;
+    margin-left: 4px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .style-span-hero {
+    margin-left: 0;
   }
 }
 
@@ -64,6 +74,13 @@
   .hero-box {
     gap: 20px;
     margin-bottom: 40px;
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-box {
+    margin-top: 0;
   }
 }
 
@@ -83,6 +100,7 @@
 @media only screen and (max-width: 767px) and (min-device-pixel-ratio: 2),
   (max-width: 767px) and (min-resolution: 192dpi) {
   .hero-image {
+    border-radius: 57px;
     background-image: url('../../images/hero-image/webp-folder/hero-image-mobile_2x.webp');
   }
 }

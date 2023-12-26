@@ -1,6 +1,5 @@
 .empty-cart-section {
-  transition: opacity 2s ease, visibility 1s ease,
-    display 1s ease allow-discrete;
+  transition: opacity 2s ease, visibility 1s ease;
 }
 .empty-card-icn {
   display: flex;

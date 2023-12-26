@@ -4,13 +4,14 @@
   align-items: center;
 }
 .div-header {
-  margin-top: 32px;
+  margin-top: 18px;
   margin-bottom: 72px;
 }
 
 @media only screen and (min-width: 768px) {
   .div-header {
-    margin-bottom: 116px;
+    margin-top: 24px;
+    margin-bottom: 100px;
   }
 }
 
@@ -31,13 +32,21 @@
   padding: 6px;
   color: var(--primary-cl);
   background-color: var(--lite-green);
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
   transition: var(--trans);
 }
+
+@media only screen and (min-width: 768px) {
+  .logo-header {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .logo-header:hover,
 .logo-header:focus {
   background-color: var(--dark-green);
@@ -58,7 +67,8 @@
 }
 @media screen and (min-width: 768px) {
   .foodboutique-header {
-    font-style: normal;
+    font-size: 24px;
+    line-height: 24px;
     letter-spacing: -0.48px;
   }
 }
@@ -136,6 +146,7 @@
 .shopping-cart-header:focus {
   background-color: var(--dark-green);
 }
+
 .cart-header {
   display: none;
   color: var(--dark-cl);
