@@ -1,5 +1,7 @@
 .empty-cart-section {
-  transition: opacity 2s ease, visibility 1s ease;
+  transition-property: opacity, visibility, height;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
 }
 .empty-card-icn {
   display: flex;
