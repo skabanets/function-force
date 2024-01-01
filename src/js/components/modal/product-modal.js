@@ -29,7 +29,7 @@ async function toggleModal(event) {
     if (!refs.modal.classList.contains('is-hidden')) {
       refs.cardLoaderContainer.classList.toggle('is-hidden');
 
-      const productID = event.target.closest('li').dataset.id;
+      const productID = event.target.closest('.js-product-item').dataset.id;
       const product = await getProductById(productID);
       const markup = getMarkup(product);
 
