@@ -1,4 +1,4 @@
-import { getItem } from '../../storage';
+import { getItem } from '../storage';
 
 const priceTitle = document.querySelector('.js-total-price');
 

@@ -1,7 +1,7 @@
 import productCardTemplate from './template';
-import * as localStorage from '../../storage';
-import * as foodAPI from '../../api';
-import { renderQuantityOrders } from '../basket-quantity-of-products';
+import * as localStorage from '../storage';
+import * as foodAPI from '../api';
+import { renderQuantityOrders } from '../products/basket-quantity-of-products';
 import { countTotalPrice } from './total-price';
 import LazyLoad from 'vanilla-lazyload';
 import Scrollbar from 'smooth-scrollbar';

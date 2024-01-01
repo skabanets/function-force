@@ -1,5 +1,5 @@
 import { getPopularProducts } from '../api';
-import sprite from '../../images/sprite.svg';
+import sprite from '../../../images/sprite.svg';
 import { buyItem } from './buy-product';
 import { getItem } from '../storage';
 import LazyLoad from 'vanilla-lazyload';

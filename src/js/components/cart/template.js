@@ -1,5 +1,5 @@
 import sprite from '../../../images/sprite.svg';
-import * as localStorage from '../../storage';
+import * as localStorage from '../storage';
 
 // TODO: use one object for all local storage items keys
 const productsInCart = localStorage.getItem('bucket');

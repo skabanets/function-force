@@ -1,7 +1,7 @@
 import { getProducts } from '../api';
 import { getItem, setItem } from '../storage';
 import { buyItem } from './buy-product';
-import sprite from '../../images/sprite.svg';
+import sprite from '../../../images/sprite.svg';
 import { displayPagination } from './pagination';
 import LazyLoad from 'vanilla-lazyload';
 import { Notify } from 'notiflix';
@@ -10,7 +10,7 @@ const lazyLoadInstance = new LazyLoad();
 const list = document.querySelector('.js-cart-list');
 const message = document.querySelector('.empty-storage');
 
-export const cards = async (page = 1) => {
+export const renderCards = async (page = 1) => {
   try {
     list.innerHTML =
       '<li class="list-loader"><span class="loader"></span></li>';
@@ -116,7 +116,7 @@ export const cards = async (page = 1) => {
   }
 };
 
-cards();
+renderCards();
 
 list.addEventListener('click', e => {
   if (

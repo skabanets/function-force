@@ -1,6 +1,6 @@
 import { getProductsCategories } from '../api';
 import { getItem, setItem } from '../storage';
-import { cards } from './product-list';
+import { renderCards } from '../products/product-list';
 import { Notify } from 'notiflix';
 
 const menuCategories = document.querySelector('.menu-categories-js');
@@ -44,7 +44,7 @@ const onClick = target => {
     setItem('pageData', { ...data, category: val });
   }
 
-  cards();
+  renderCards();
 };
 
 menuCategories.addEventListener('click', e => onClick(e.target));

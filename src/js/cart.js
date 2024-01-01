@@ -1,4 +1,4 @@
 import './components/cart/products-list';
-import './components/footer';
-import './components/success-subscribing-modal';
-import './components/error-subscribing-modal';
+import './components/modal/subscription';
+import './components/modal/success-subscribing-modal';
+import './components/modal/error-subscribing-modal';
