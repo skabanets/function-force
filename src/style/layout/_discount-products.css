@@ -1,0 +1,150 @@
+@media screen and (min-width: 1440px) {
+  .discount-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.discount-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .discount-list {
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .discount-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.discount-item {
+  list-style: none;
+  border-radius: 15px;
+  background-color: var(--lite-color);
+  position: relative;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 335px;
+}
+
+@media screen and (min-width: 768px) {
+  .discount-item {
+    width: 336px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .discount-item {
+    width: 275px;
+  }
+}
+
+.discount-icon {
+  position: absolute;
+  top: -3px;
+  right: 10px;
+}
+
+.discount-container-img {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--primary-cl);
+}
+
+.discount-img {
+  width: 114px;
+}
+
+@media screen and (min-width: 1440px) {
+  .discount-container-img {
+    width: 243px;
+  }
+
+  .discount-img {
+    width: 105px;
+  }
+}
+
+.discount-order {
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+}
+
+.discount-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.discount-price {
+  margin-right: 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .discount-name {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .discount-price {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.discount-product-button {
+  height: 34px;
+  width: 34px;
+  border-radius: 30px;
+  background-color: var(--lite-green);
+  border: none;
+  padding: 8px;
+  transition: background-color var(--trans);
+}
+
+.discount-product-button:hover,
+.discount-product-button:focus {
+  background-color: var(--dark-green);
+}
+
+.icon-discount-btn {
+  fill: var(--primary-cl);
+}
+/* ////\\\\ */
+.check-discount {
+  border: none;
+  background-color: var(--lite-green);
+  border-radius: 30px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.buy-svg-discount,
+.check-svg-discount {
+  fill: var(--primary-cl);
+}

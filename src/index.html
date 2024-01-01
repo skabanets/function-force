@@ -1,14 +1,45 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./public/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <meta name="description" content="Food Boutique - organic food store." />
+    <title>Food Boutique</title>
+    <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <include src="./partials/header.html"></include>
+
+    <main>
+      <include src="./partials/hero.html"></include>
+
+      <section class="products-section container">
+        <h2 class="visually-hidden">Products</h2>
+        <include src="./partials/filters.html"></include>
+        <div class="products-container">
+          <div class="main-products">
+            <h3 class="visually-hidden">Products storage</h3>
+            <include src="./partials/product-storage.html"></include>
+            <include src="./partials/empty-storage.html"></include>
+            <include src="./partials/pagination.html"></include>
+          </div>
+          <div class="additional-products">
+            <include src="./partials/popular-products.html"></include>
+            <include src="./partials/discount-products.html"></include>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <include src="./partials/footer.html"></include>
+
+    <include src="./partials/product-modal.html"></include>
+    <include src="./partials/success-subscribing-modal.html"></include>
+    <include src="./partials/error-subscribing-modal.html"></include>
+
+    <include src="./partials/scroll-up-btn.html"></include>
+
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>

@@ -1,0 +1,30 @@
+.btn-scroll-up {
+  position: fixed;
+  background-color: var(--ligth-cl);
+  right: 15px;
+  bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50%;
+  box-shadow: 4px 5px 23px 5px rgba(34, 60, 80, 0.2);
+  transition: background-color var(--trans);
+}
+
+@media screen and (min-width: 768px) {
+  .btn-scroll-up {
+    right: 25px;
+    bottom: 25px;
+  }
+}
+
+.scroll-up-icon {
+  fill: var(--lite-color);
+}
+
+.hide-scroll-up-btn {
+  display: none;
+}
