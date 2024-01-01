@@ -1,5 +1,5 @@
 import { getProductById } from '../api';
-import { buyItem } from './buy-product';
+import { buyItem } from '../products/buy-product';
 import { getMarkup } from './product-modal-markup';
 import { Notify } from 'notiflix';
 

@@ -1,4 +1,4 @@
-import sprite from '../../images/sprite.svg';
+import sprite from '../../../images/sprite.svg';
 import { getDiscountedProducts } from '../api';
 import { buyItem } from './buy-product';
 import { getItem } from '../storage';

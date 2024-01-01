@@ -1,4 +1,4 @@
-import { cards } from './product-list';
+import { renderCards } from './product-list';
 
 const mobileDisp = () => {
   const width = window.innerWidth;
@@ -57,14 +57,14 @@ export const displayPagination = async totalPages => {
     target.classList.add('pg-active');
 
     updateButtonState();
-    cards(page);
+    renderCards(page);
   };
 
   const changeLeft = target => {
     if (page == 1 || target.classList.contains('left-btns')) return;
     const parent = target.closest('.pg-arrow');
     parent.classList.contains('js-btn-1') ? page-- : (page = 1);
-    cards(page);
+    renderCards(page);
     updateButtonState();
     step();
   };
@@ -73,7 +73,7 @@ export const displayPagination = async totalPages => {
     if (page == totalPages || target.classList.contains('right-btns')) return;
     const parent = target.closest('.pg-arrow');
     parent.classList.contains('js-btn-1') ? page++ : (page = totalPages);
-    cards(page);
+    renderCards(page);
     updateButtonState();
     step();
   };

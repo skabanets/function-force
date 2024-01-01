@@ -1,5 +1,5 @@
 import { getItem, setItem } from '../storage';
-import { cards } from './product-list';
+import { renderCards } from '../products/product-list';
 
 const list = document.querySelector('.js-menu-sort');
 list.insertAdjacentHTML(
@@ -40,7 +40,7 @@ const onClick = target => {
     });
     sort.textContent = text;
   }
-  cards();
+  renderCards();
 };
 
 list.addEventListener('click', e => onClick(e.target));
